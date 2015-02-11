@@ -80,8 +80,8 @@ public class DbInterface
      */
     public void addPerson(String firstName, String lastName, String bDay, String address)
     {
-        LocalDateTime tempID = LocalDateTime.now();
-        String query = "INSERT INTO `personsdatabase`.`personstable` (`FirstName`, `LastName`, `ID`, `DOB`, `Address`) VALUES ('" + firstName + "', '" + lastName + "', '" + tempID + "', '" + bDay + "', '" + address + "');";
+        LocalDateTime dateAdded = LocalDateTime.now();
+        String query = "INSERT INTO `personsdatabase`.`personstable` (`FirstName`, `LastName`, `DateAdded`, `DOB`, `Address`) VALUES ('" + firstName + "', '" + lastName + "', '" + dateAdded + "', '" + bDay + "', '" + address + "');";
         try {
             stmt = conn.createStatement();
             stmt.execute(query);
@@ -138,7 +138,7 @@ public class DbInterface
                 int IDnumber = rs.getInt("ID");
                 String FirstName = rs.getString("FirstName");
                 String LastName = rs.getString("LastName");
-                System.out.println(FirstName + " " + LastName + " " + IDnumber);
+                System.out.println(IDnumber + " "+FirstName + " " + LastName);
             }
             System.out.println("\n");
         } catch (SQLException e) {
@@ -182,7 +182,7 @@ public class DbInterface
                 String FirstName = rs.getString("FirstName");
                 String LastName = rs.getString("LastName");
                 String bDay = rs.getString("DOB");
-                listOfPeople[x] = (FirstName + " " + LastName + " " + bDay + " " + address + "\t " + IDnumber);
+                listOfPeople[x] = (IDnumber + " " +FirstName + " " + LastName + " " + bDay + " " + address);
                 x++;
                 if (x > listOfPeople.length - 1) {
                     listOfPeople = expandArray(listOfPeople);
