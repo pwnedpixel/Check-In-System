@@ -80,6 +80,7 @@ public class DbInterface
      */
     public void addPerson(String firstName, String lastName, String bDay, String address)
     {
+        bDay = "2010-10-10";
         LocalDateTime tempID = LocalDateTime.now();
         String query = "INSERT INTO `personsdatabase`.`personstable` (`FirstName`, `LastName`, `ID`, `DOB`, `Address`) VALUES ('" + firstName + "', '" + lastName + "', '" + tempID + "', '" + bDay + "', '" + address + "');";
         try {
