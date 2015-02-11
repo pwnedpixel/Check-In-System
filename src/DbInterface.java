@@ -43,6 +43,11 @@ public class DbInterface
             e.printStackTrace();
         }
     }
+    
+    public DbInterface(Connection newConn)
+    {
+        conn = newConn;
+    }
 
     /**
      * Safely closes the connection to the database
@@ -238,6 +243,11 @@ public class DbInterface
             }
         }
         return toReturn;
+    }
+    
+    public Connection getConn()
+    {
+        return conn;
     }
 
     /**
