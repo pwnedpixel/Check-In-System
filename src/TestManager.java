@@ -12,9 +12,12 @@ import java.sql.*;
 
 public class TestManager
 {
+
+    public DbInterface personDB = new DbInterface();
+
     private void testManagerInit()
     {
-        TestSpaceDuplicate testSpace = new TestSpaceDuplicate(personDB);
+        TestSpaceDuplicate testSpace = new TestSpaceDuplicate(personDB.getConn());
     }
 
     public static void main(String[] args)
