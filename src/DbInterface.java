@@ -18,8 +18,7 @@ public class DbInterface
     ResultSet rs = null;
 
     /**
-     * Constructor. Loads the JDBC drivers and establishes a connection with the
-     * database.
+     * Constructor. Loads the JDBC drivers and establishes a connection with the database.
      */
     public DbInterface()
     {
@@ -43,7 +42,7 @@ public class DbInterface
             e.printStackTrace();
         }
     }
-    
+
     public DbInterface(Connection newConn)
     {
         conn = newConn;
@@ -72,8 +71,7 @@ public class DbInterface
     }
 
     /**
-     * Adds a Person with given parameters (First name and Last name)to the
-     * database.
+     * Adds a Person with given parameters (First name and Last name)to the database.
      *
      * @param firstName The persons first name
      * @param lastName the persons last name
@@ -138,7 +136,7 @@ public class DbInterface
                 int IDnumber = rs.getInt("ID");
                 String FirstName = rs.getString("FirstName");
                 String LastName = rs.getString("LastName");
-                System.out.println(IDnumber + " "+FirstName + " " + LastName);
+                System.out.println(IDnumber + " " + FirstName + " " + LastName);
             }
             System.out.println("\n");
         } catch (SQLException e) {
@@ -155,8 +153,7 @@ public class DbInterface
     }
 
     /**
-     * Gets an array of strings containing information on each person in the
-     * database, each string contains the id, first name as well as last name.
+     * Gets an array of strings containing information on each person in the database, each string contains the id, first name as well as last name.
      *
      * @param column The column to which the sort is applied
      * @param order The way the list is sorted (Ascending or descending)
@@ -182,13 +179,12 @@ public class DbInterface
                 String FirstName = rs.getString("FirstName");
                 String LastName = rs.getString("LastName");
                 String bDay = rs.getString("DOB");
-                listOfPeople[x] = (IDnumber + " " +FirstName + " " + LastName + " " + bDay + " " + address);
+                listOfPeople[x] = (IDnumber + " " + FirstName + " " + LastName + " " + bDay + " " + address);
                 x++;
                 if (x > listOfPeople.length - 1) {
                     listOfPeople = expandArray(listOfPeople);
                 }
             }
-            System.out.println("\n");
         } catch (SQLException e) {
             System.err.println(e);
         } finally {
@@ -217,6 +213,7 @@ public class DbInterface
 
     /**
      * Gets a property of a certain user based on their ID number
+     *
      * @param ID The persons Id number
      * @param property The column that you want to get
      * @return returns the property demanded
@@ -242,17 +239,140 @@ public class DbInterface
                 }
             }
         }
+
         return toReturn;
     }
-    
+
     public Connection getConn()
     {
         return conn;
     }
 
+    public String[] searchDB(String firstName, String lastName, String bDay, String address)
+    {
+        String[] searchResults = new String[1];
+        boolean queryOkay = false;
+        String query = "SELECT * FROM personsdatabase.personstable WHERE ";
+        if (!firstName.equals("")) {
+            query = query + "FirstName = '" + firstName + "'";
+            queryOkay = true;
+        }
+        if (!lastName.equals("")) {
+            if (queryOkay) {
+                query = query + " AND ";
+            }
+            query = query + "LastName = '" + lastName + "'";
+            queryOkay = true;
+        }
+        if (!bDay.equals("")) {
+            if (queryOkay) {
+                query = query + " AND ";
+            }
+            query = query + "DOB = '" + bDay + "'";
+            queryOkay = true;
+        }
+        if (!address.equals("")) {
+            if (queryOkay) {
+                query = query + " AND ";
+            }
+            query = query + "Address = '" + address + "'";
+            queryOkay = true;
+        }
+        if (queryOkay) {
+            query = query + ";";
+        }
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+            int x = 0;
+            while (rs.next()) {
+                String IDnumber = rs.getString("ID");
+                String newAddress = rs.getString("Address");
+                String FirstName = rs.getString("FirstName");
+                String LastName = rs.getString("LastName");
+                String newBDay = rs.getString("DOB");
+                searchResults[x] = (IDnumber + " " + FirstName + " " + LastName + " " + newBDay + " " + newAddress);
+                x++;
+                if (x > searchResults.length - 1) {
+                    searchResults = expandArray(searchResults);
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return searchResults;
+    }
+
+    public ResultSet searchDBrs(String firstName, String lastName, String bDay, String address)
+    {
+        ResultSet newRS=null;
+        boolean queryOkay = false;
+        String query = "SELECT * FROM personsdatabase.personstable WHERE ";
+        if (!firstName.equals("")) {
+            query = query + "FirstName = '" + firstName + "'";
+            queryOkay = true;
+        }
+        if (!lastName.equals("")) {
+            if (queryOkay) {
+                query = query + " AND ";
+            }
+            query = query + "LastName = '" + lastName + "'";
+            queryOkay = true;
+        }
+        if (!bDay.equals("")) {
+            if (queryOkay) {
+                query = query + " AND ";
+            }
+            query = query + "DOB = '" + bDay + "'";
+            queryOkay = true;
+        }
+        if (!address.equals("")) {
+            if (queryOkay) {
+                query = query + " AND ";
+            }
+            query = query + "Address = '" + address + "'";
+            queryOkay = true;
+        }
+        if (queryOkay) {
+            query = query + ";";
+        }
+        try {
+            stmt = conn.createStatement();
+            newRS = stmt.executeQuery(query);
+//            while (rs.next()) {
+//                
+//                String IDnumber = rs.getString("ID");
+//                String newAddress = rs.getString("Address");
+//                String FirstName = rs.getString("FirstName");
+//                String LastName = rs.getString("LastName");
+//                String newBDay = rs.getString("DOB");
+//                System.out.println(IDnumber + " " + FirstName + " " + LastName + " " + newBDay + " " + newAddress);
+//            }
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        System.out.println("TEST2");
+        return newRS;
+    }
+
     /**
-     * Re assigns an ID to each person starting at 1 in the order they were
-     * entered into the database.
+     * Re assigns an ID to each person starting at 1 in the order they were entered into the database.
      */
     public void resetIDCount() //currently not used
     {
@@ -316,16 +436,14 @@ public class DbInterface
     }
 
     /**
-     * Takes and array that is not large enough and returns a new array that is
-     * larger
+     * Takes and array that is not large enough and returns a new array that is larger
      *
      * @param inputArray the smaller array
-     * @return returns a larger array that still contains the contents of the
-     * original array
+     * @return returns a larger array that still contains the contents of the original array
      */
     private String[] expandArray(String[] inputArray)
     {
-        String[] newArray = new String[inputArray.length + 10];
+        String[] newArray = new String[inputArray.length + 1];
         for (int x = 0; x < inputArray.length; x++) {
             newArray[x] = inputArray[x];
         }
