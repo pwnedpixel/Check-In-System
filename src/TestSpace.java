@@ -304,7 +304,7 @@ public class TestSpace extends javax.swing.JFrame
     private void refreshList()
     {
         listArea.setText("");
-        String[] list = personDB.getList();// ("firstname","ASC");
+        String[] list = personDB.getList("firstname","ASC");
         String current;
         int x = 0;
         while (list[x] != null)
