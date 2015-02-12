@@ -285,6 +285,9 @@ public class DbInterface
         if (queryOkay) {
             query = query + ";";
         }
+        if (!queryOkay) {
+            return searchResults;
+        }
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(query);
