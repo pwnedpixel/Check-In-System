@@ -31,13 +31,19 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     {
         refreshList(listArea);
         refreshList(searchListArea);
+        invisAll();
+        mainPanel.setEnabled(true);
+        mainPanel.setVisible(true);
+    }
+    
+    public void invisAll()
+    {
         searchPanel.setEnabled(false);
         searchPanel.setVisible(false);
-    }
-
-    TestSpaceDuplicate(Connection conn)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        joinPanel.setEnabled(false);
+        joinPanel.setVisible(false);
+        mainPanel.setEnabled(false);
+        mainPanel.setVisible(false);
     }
 
     /**
@@ -71,6 +77,17 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         clearButton = new javax.swing.JButton();
         LastNameText = new javax.swing.JLabel();
         idField = new javax.swing.JTextField();
+        joinPanel = new javax.swing.JPanel();
+        joinLastNameField = new javax.swing.JTextField();
+        joinFirstNameField = new javax.swing.JTextField();
+        joinDOBfield = new javax.swing.JTextField();
+        DOB2 = new javax.swing.JLabel();
+        joinAddressField = new javax.swing.JTextField();
+        Address2 = new javax.swing.JLabel();
+        FirstNameText2 = new javax.swing.JLabel();
+        joinButton = new javax.swing.JButton();
+        LastNameText2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         searchPanel = new javax.swing.JPanel();
         searchLastNameField = new javax.swing.JTextField();
         searchFirstNameField = new javax.swing.JTextField();
@@ -87,6 +104,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         LastNameText1 = new javax.swing.JLabel();
         switchSearchButton = new javax.swing.JButton();
         mainButton = new javax.swing.JButton();
+        switchJoinButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 255));
@@ -318,6 +336,117 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        joinPanel.setPreferredSize(new java.awt.Dimension(580, 270));
+
+        joinLastNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                joinLastNameFieldActionPerformed(evt);
+            }
+        });
+
+        joinFirstNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                joinFirstNameFieldActionPerformed(evt);
+            }
+        });
+
+        joinDOBfield.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                joinDOBfieldActionPerformed(evt);
+            }
+        });
+
+        DOB2.setText("Date of birth");
+
+        joinAddressField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                joinAddressFieldActionPerformed(evt);
+            }
+        });
+
+        Address2.setText("Address");
+
+        FirstNameText2.setText("First Name");
+
+        joinButton.setText("Join");
+        joinButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                joinButtonActionPerformed(evt);
+            }
+        });
+
+        LastNameText2.setText("Last Name");
+
+        jLabel1.setText("YYYY-MM-DD");
+
+        javax.swing.GroupLayout joinPanelLayout = new javax.swing.GroupLayout(joinPanel);
+        joinPanel.setLayout(joinPanelLayout);
+        joinPanelLayout.setHorizontalGroup(
+            joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(joinPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(joinButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(joinPanelLayout.createSequentialGroup()
+                        .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(joinPanelLayout.createSequentialGroup()
+                                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(FirstNameText2)
+                                    .addComponent(LastNameText2))
+                                .addGap(28, 28, 28)
+                                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(joinFirstNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
+                                    .addComponent(joinLastNameField)))
+                            .addGroup(joinPanelLayout.createSequentialGroup()
+                                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(DOB2)
+                                    .addComponent(Address2))
+                                .addGap(18, 18, 18)
+                                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(joinPanelLayout.createSequentialGroup()
+                                        .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel1)
+                                        .addGap(0, 52, Short.MAX_VALUE))
+                                    .addComponent(joinDOBfield))))
+                        .addGap(0, 287, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        joinPanelLayout.setVerticalGroup(
+            joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, joinPanelLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(joinFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FirstNameText2))
+                .addGap(18, 18, 18)
+                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LastNameText2)
+                    .addComponent(joinLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DOB2)
+                    .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Address2)
+                    .addComponent(joinDOBfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(joinButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+
         searchPanel.setPreferredSize(new java.awt.Dimension(582, 272));
 
         searchLastNameField.addActionListener(new java.awt.event.ActionListener()
@@ -460,12 +589,14 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         layeredPaneSearch.setLayout(layeredPaneSearchLayout);
         layeredPaneSearchLayout.setHorizontalGroup(
             layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(layeredPaneSearchLayout.createSequentialGroup()
+                .addComponent(joinPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layeredPaneSearchLayout.createSequentialGroup()
                     .addGap(7, 7, 7)
                     .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(12, Short.MAX_VALUE)))
+                    .addContainerGap(13, Short.MAX_VALUE)))
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layeredPaneSearchLayout.createSequentialGroup()
                     .addGap(7, 7, 7)
@@ -474,7 +605,9 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         );
         layeredPaneSearchLayout.setVerticalGroup(
             layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 294, Short.MAX_VALUE)
+            .addGroup(layeredPaneSearchLayout.createSequentialGroup()
+                .addComponent(joinPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 16, Short.MAX_VALUE))
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layeredPaneSearchLayout.createSequentialGroup()
                     .addGap(12, 12, 12)
@@ -487,6 +620,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layeredPaneSearch.setLayer(mainPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        layeredPaneSearch.setLayer(joinPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         layeredPaneSearch.setLayer(searchPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         switchSearchButton.setText("Search");
@@ -498,12 +632,21 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
-        mainButton.setText("Main");
+        mainButton.setText("Admin");
         mainButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 mainButtonActionPerformed(evt);
+            }
+        });
+
+        switchJoinButton.setText("Join");
+        switchJoinButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                switchJoinButtonActionPerformed(evt);
             }
         });
 
@@ -513,10 +656,13 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(mainButton)
+                        .addGap(88, 88, 88)
+                        .addComponent(switchSearchButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(switchSearchButton))
+                        .addComponent(switchJoinButton))
                     .addComponent(layeredPaneSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 14, Short.MAX_VALUE))
         );
@@ -527,7 +673,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(switchSearchButton)
-                    .addComponent(mainButton))
+                    .addComponent(mainButton)
+                    .addComponent(switchJoinButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -616,13 +763,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
     private void switchSearchButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_switchSearchButtonActionPerformed
     {//GEN-HEADEREND:event_switchSearchButtonActionPerformed
-        //mainFrame.setComponentZOrder(02, WIDTH);
-//        int position = mainFrame.isSelected() ? 0 : 1;
-//        mainFrame.setLayer(position);
-        mainPanel.setEnabled(false);
-        mainPanel.setVisible(false);
+        invisAll();
         searchPanel.setEnabled(true);
         searchPanel.setVisible(true);
+        refreshList(searchListArea);
                 
     }//GEN-LAST:event_switchSearchButtonActionPerformed
 
@@ -681,11 +825,47 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
     private void mainButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_mainButtonActionPerformed
     {//GEN-HEADEREND:event_mainButtonActionPerformed
-        searchPanel.setEnabled(false);
-        searchPanel.setVisible(false);
+        invisAll();
         mainPanel.setEnabled(true);
         mainPanel.setVisible(true);
+        refreshList(listArea);
     }//GEN-LAST:event_mainButtonActionPerformed
+
+    private void switchJoinButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_switchJoinButtonActionPerformed
+    {//GEN-HEADEREND:event_switchJoinButtonActionPerformed
+        invisAll();
+        //joinPanel.setEnabled(true);
+        joinPanel.setVisible(true);
+    }//GEN-LAST:event_switchJoinButtonActionPerformed
+
+    private void joinLastNameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_joinLastNameFieldActionPerformed
+    {//GEN-HEADEREND:event_joinLastNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_joinLastNameFieldActionPerformed
+
+    private void joinFirstNameFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_joinFirstNameFieldActionPerformed
+    {//GEN-HEADEREND:event_joinFirstNameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_joinFirstNameFieldActionPerformed
+
+    private void joinDOBfieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_joinDOBfieldActionPerformed
+    {//GEN-HEADEREND:event_joinDOBfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_joinDOBfieldActionPerformed
+
+    private void joinAddressFieldActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_joinAddressFieldActionPerformed
+    {//GEN-HEADEREND:event_joinAddressFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_joinAddressFieldActionPerformed
+
+    private void joinButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_joinButtonActionPerformed
+    {//GEN-HEADEREND:event_joinButtonActionPerformed
+        String firstName = joinFirstNameField.getText();
+        String lastName = joinLastNameField.getText();
+        String bDay = joinDOBfield.getText();
+        String address = joinAddressField.getText();
+        personDB.addPerson(firstName, lastName, bDay, address);
+    }//GEN-LAST:event_joinButtonActionPerformed
 
     private void refreshList(JTextArea listToRefresh)
     {
@@ -751,13 +931,17 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JButton AddUser;
     private javax.swing.JLabel Address;
     private javax.swing.JLabel Address1;
+    private javax.swing.JLabel Address2;
     private javax.swing.JLabel DOB;
     private javax.swing.JLabel DOB1;
+    private javax.swing.JLabel DOB2;
     private javax.swing.JTextField DOBfield;
     private javax.swing.JLabel FirstNameText;
     private javax.swing.JLabel FirstNameText1;
+    private javax.swing.JLabel FirstNameText2;
     private javax.swing.JLabel LastNameText;
     private javax.swing.JLabel LastNameText1;
+    private javax.swing.JLabel LastNameText2;
     private javax.swing.JButton RemoveUser;
     private javax.swing.JButton SearchClearButton;
     private javax.swing.JTextField addressField;
@@ -767,8 +951,15 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField joinAddressField;
+    private javax.swing.JButton joinButton;
+    private javax.swing.JTextField joinDOBfield;
+    private javax.swing.JTextField joinFirstNameField;
+    private javax.swing.JTextField joinLastNameField;
+    private javax.swing.JPanel joinPanel;
     private javax.swing.JTextField lastNameField;
     private javax.swing.JLayeredPane layeredPaneSearch;
     private javax.swing.JTextArea listArea;
@@ -784,6 +975,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JTextArea searchListArea;
     private javax.swing.JPanel searchPanel;
     private javax.swing.JButton searchRefresh;
+    private javax.swing.JButton switchJoinButton;
     private javax.swing.JButton switchSearchButton;
     // End of variables declaration//GEN-END:variables
 }
