@@ -24,7 +24,15 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     public TestSpaceDuplicate()
     {
         initComponents();
+        guiSetup();
+    }
+    
+    public void guiSetup()
+    {
         refreshList(listArea);
+        refreshList(searchListArea);
+        searchPanel.setEnabled(false);
+        searchPanel.setVisible(false);
     }
 
     TestSpaceDuplicate(Connection conn)
@@ -187,7 +195,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
         Address.setText("Address");
 
-        listPeopleButton.setText("Refresh");
+        listPeopleButton.setText("Reset");
         listPeopleButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -223,27 +231,6 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
-                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
-                                .addGap(106, 106, 106)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(45, 45, 45)
-                        .addComponent(listPeopleButton))
-                    .addComponent(AddUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(RemoveUser, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPanelLayout.createSequentialGroup()
                 .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addContainerGap()
@@ -269,6 +256,29 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                         .addComponent(searchButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(clearButton))))
+            .addGroup(mainPanelLayout.createSequentialGroup()
+                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addComponent(RemoveUser, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AddUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addGroup(mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, mainPanelLayout.createSequentialGroup()
+                                        .addGap(106, 106, 106)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(35, 35, 35)
+                                .addComponent(listPeopleButton)))
+                        .addGap(7, 7, 7)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,7 +361,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
         Address1.setText("Address");
 
-        searchRefresh.setText("Refresh");
+        searchRefresh.setText("Reset");
         searchRefresh.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -643,12 +653,25 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
     private void searchAreaButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_searchAreaButtonActionPerformed
     {//GEN-HEADEREND:event_searchAreaButtonActionPerformed
-        // TODO add your handling code here:
+        String firstName = searchFirstNameField.getText();
+        String lastName = searchLastNameField.getText();
+        String DOB = searchDOBfield.getText();
+        String address = searchAddressField.getText();
+        LinkedList results = personDB.searchDB(firstName, lastName, DOB, address);
+        searchListArea.setText("");
+        String current;
+        for (int x = 0; x < results.size(); x++) {
+            current = searchListArea.getText();
+            searchListArea.setText(current+results.get(x)+"\n");
+        }
     }//GEN-LAST:event_searchAreaButtonActionPerformed
 
     private void SearchClearButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_SearchClearButtonActionPerformed
     {//GEN-HEADEREND:event_SearchClearButtonActionPerformed
-        // TODO add your handling code here:
+        searchFirstNameField.setText("");
+        searchLastNameField.setText("");
+        searchDOBfield.setText("");
+        searchAddressField.setText("");
     }//GEN-LAST:event_SearchClearButtonActionPerformed
 
     private void layeredPaneSearchKeyPressed(java.awt.event.KeyEvent evt)//GEN-FIRST:event_layeredPaneSearchKeyPressed
@@ -671,8 +694,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         String current;
         int x = 0;
         while (list[x] != null) {
-            current = listArea.getText();
-            listArea.setText(current + list[x] + "\n");
+            current = listToRefresh.getText();
+            listToRefresh.setText(current + list[x] + "\n");
             x++;
         }
     }
