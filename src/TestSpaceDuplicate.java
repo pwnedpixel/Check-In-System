@@ -369,7 +369,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(listPeopleButton))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
@@ -468,7 +468,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                                         .addComponent(jLabel1)
                                         .addGap(0, 52, Short.MAX_VALUE))
                                     .addComponent(joinDOBfield))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
                         .addComponent(jButton4)))
                 .addContainerGap())
         );
@@ -918,6 +918,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         personDB.addPerson(firstName, lastName, bDay, address);
         invisAll();
         startPanel.setVisible(true);
+        refreshLists();
     }//GEN-LAST:event_joinButtonActionPerformed
 
     private void switchSearchButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_switchSearchButton1ActionPerformed
