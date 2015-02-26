@@ -46,7 +46,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="layeredPaneSearch" pref="306" max="32767" attributes="0"/>
+              <Component id="layeredPaneSearch" pref="666" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="switchSearchButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -96,12 +96,12 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="joinPanel" alignment="0" pref="294" max="32767" attributes="0"/>
+              <Component id="joinPanel" alignment="0" pref="660" max="32767" attributes="0"/>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Component id="adminPanel" alignment="0" pref="294" max="32767" attributes="0"/>
+                  <Component id="adminPanel" alignment="0" pref="660" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                  <Component id="searchPanel" alignment="0" pref="294" max="32767" attributes="0"/>
+                  <Component id="searchPanel" alignment="0" pref="660" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
                   <Component id="startPanel" alignment="0" max="32767" attributes="0"/>
