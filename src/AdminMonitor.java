@@ -7,7 +7,6 @@ import javax.swing.JTextArea;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Andy
@@ -17,6 +16,7 @@ public class AdminMonitor extends javax.swing.JFrame
 
     private DbInterface personDB = new DbInterface();
     private boolean monitoring = false;
+
     /**
      * Creates new form AdminMonitor
      */
@@ -56,7 +56,7 @@ public class AdminMonitor extends javax.swing.JFrame
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        warningLabel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         startMonitor = new javax.swing.JButton();
         monitorInfo = new javax.swing.JLabel();
@@ -160,7 +160,7 @@ public class AdminMonitor extends javax.swing.JFrame
 
         jLabel1.setText("Warnings");
 
-        jLabel2.setText("NoWarnings");
+        warningLabel.setText("NoWarnings");
 
         jButton1.setText("Reset Warning");
 
@@ -188,7 +188,7 @@ public class AdminMonitor extends javax.swing.JFrame
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(warningLabel)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -207,7 +207,7 @@ public class AdminMonitor extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(warningLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
@@ -366,10 +366,9 @@ public class AdminMonitor extends javax.swing.JFrame
         LinkedList results = personDB.searchDB(firstName, lastName, bDay, address);
         listArea.setText("");
         String current;
-        for (int x = 0; x < results.size(); x++)
-        {
+        for (int x = 0; x < results.size(); x++) {
             current = listArea.getText();
-            listArea.setText(current+results.get(x)+"\n");
+            listArea.setText(current + results.get(x) + "\n");
         }
     }//GEN-LAST:event_searchButtonActionPerformed
 
@@ -383,10 +382,19 @@ public class AdminMonitor extends javax.swing.JFrame
 
     private void startMonitorActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_startMonitorActionPerformed
     {//GEN-HEADEREND:event_startMonitorActionPerformed
+        monitoring = true;
         monitorInfo.setText("Monitoring...");
-        while (monitoring)
-        {
-            personDB.get
+        while (monitoring) {
+            if (personDB.getWarningStatus() == true) {
+                warningLabel.setText("EMERGENCY!");
+            } else {
+                warningLabel.setText("No Warnings");
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+            }
+            System.out.println("hi"+Math.random());
         }
     }//GEN-LAST:event_startMonitorActionPerformed
 
@@ -402,7 +410,7 @@ public class AdminMonitor extends javax.swing.JFrame
             x++;
         }
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -456,7 +464,6 @@ public class AdminMonitor extends javax.swing.JFrame
     private javax.swing.JTextField idField;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -466,5 +473,6 @@ public class AdminMonitor extends javax.swing.JFrame
     private javax.swing.JLabel monitorInfo;
     private javax.swing.JButton searchButton;
     private javax.swing.JButton startMonitor;
+    private javax.swing.JLabel warningLabel;
     // End of variables declaration//GEN-END:variables
 }
