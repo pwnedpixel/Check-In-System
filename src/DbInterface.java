@@ -75,12 +75,12 @@ public class DbInterface
     public boolean getWarningStatus()
     {
         boolean warningStatus = false;
-        String query = "SELECT * FROM personsdatabase.warning WHERE `warninng`.`station` = '" + "default" + "'";
+        String query = "SELECT * FROM personsdatabase.warning WHERE `station` = '" + "default" + "'";
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(query);
             while (rs.next()) {
-                warningStatus = rs.getBoolean("warning");
+                warningStatus = rs.getBoolean("warningstatus");
             }
             System.out.println("\n");
         } catch (SQLException e) {
