@@ -71,6 +71,31 @@ public class DbInterface
         }
         System.err.println("Connection Closed");
     }
+    
+    public boolean getWarningStatus()
+    {
+        boolean warningStatus = false;
+        String query = "SELECT * FROM personsdatabase.warning WHERE `station` = '" + "default" + "'";
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                warningStatus = rs.getBoolean("warningstatus");
+            }
+            System.out.println("\n");
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return warningStatus;
+    }
 
     /**
      * Adds a Person with given parameters (First name and Last name)to the
