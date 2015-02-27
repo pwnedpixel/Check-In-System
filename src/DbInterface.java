@@ -72,15 +72,15 @@ public class DbInterface
         System.err.println("Connection Closed");
     }
     
-    public boolean getWarningStatus()
+    public int getWarningStatus()
     {
-        boolean warningStatus = false;
+        int warningStatus = 0;
         String query = "SELECT * FROM personsdatabase.warning WHERE `station` = '" + "default" + "'";
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(query);
             while (rs.next()) {
-                warningStatus = rs.getBoolean("warningstatus");
+                warningStatus = rs.getInt("warningstatus");
             }
             System.out.println("\n");
         } catch (SQLException e) {
