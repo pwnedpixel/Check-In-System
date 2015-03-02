@@ -17,6 +17,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
     public DbInterface personDB = new DbInterface();
     private String currentScreen = "Main";
+    public int stationNumber = 0;
 
     /**
      * Creates new form NewJFrame
@@ -30,6 +31,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     public void guiSetup()
     {
         refreshLists();
+        stationNumber = (int) (Math.random()*1000.0);
+        stationNumberLabel.setText(Integer.toString(stationNumber));
         joinPanel.setVisible(false);
         searchPanel.setVisible(false);
         adminPanel.setVisible(false);
@@ -50,7 +53,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         layeredPaneSearch = new javax.swing.JLayeredPane();
         startPanel = new javax.swing.JPanel();
@@ -106,20 +110,26 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         switchSearchButton = new javax.swing.JButton();
         mainButton = new javax.swing.JButton();
         switchJoinButton = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        stationNumberLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(1000, 700));
+        setResizable(false);
 
         layeredPaneSearch.setBackground(new java.awt.Color(0, 0, 204));
         layeredPaneSearch.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         layeredPaneSearch.setAlignmentX(0.0F);
         layeredPaneSearch.setAlignmentY(0.0F);
         layeredPaneSearch.setEnabled(false);
-        layeredPaneSearch.setPreferredSize(new java.awt.Dimension(600, 300));
-        layeredPaneSearch.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        layeredPaneSearch.setPreferredSize(new java.awt.Dimension(600, 500));
+        layeredPaneSearch.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyPressed(java.awt.event.KeyEvent evt)
+            {
                 layeredPaneSearchKeyPressed(evt);
             }
         });
@@ -131,11 +141,12 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         switchSearchButton1.setBackground(new java.awt.Color(255, 255, 255));
         switchSearchButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         switchSearchButton1.setForeground(new java.awt.Color(255, 255, 255));
-        switchSearchButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Austin J. Baggio\\Pictures\\P3Images\\CloudButton.png")); // NOI18N
         switchSearchButton1.setText("Search");
         switchSearchButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        switchSearchButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        switchSearchButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 switchSearchButton1ActionPerformed(evt);
             }
         });
@@ -143,12 +154,13 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         switchJoinButton1.setBackground(new java.awt.Color(255, 255, 255));
         switchJoinButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         switchJoinButton1.setForeground(new java.awt.Color(255, 255, 255));
-        switchJoinButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Austin J. Baggio\\Pictures\\P3Images\\CloudButton.png")); // NOI18N
         switchJoinButton1.setText("Join");
         switchJoinButton1.setBorder(switchJoinButton1.getBorder());
         switchJoinButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        switchJoinButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        switchJoinButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 switchJoinButton1ActionPerformed(evt);
             }
         });
@@ -180,54 +192,70 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         adminPanel.setPreferredSize(new java.awt.Dimension(580, 270));
 
         jButton1.setText("Français");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton1ActionPerformed(evt);
             }
         });
 
         AddUser.setText("Add Person");
-        AddUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        AddUser.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 AddUserActionPerformed(evt);
             }
         });
 
         jButton2.setText("English");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton2.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        lastNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        lastNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 lastNameFieldActionPerformed(evt);
             }
         });
 
         jButton3.setText("español");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton3.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        firstNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        firstNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 firstNameFieldActionPerformed(evt);
             }
         });
 
-        DOBfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        DOBfield.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 DOBfieldActionPerformed(evt);
             }
         });
 
         RemoveUser.setText("Remove ID:");
-        RemoveUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RemoveUser.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RemoveUserActionPerformed(evt);
             }
         });
@@ -239,8 +267,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         listArea.setRows(5);
         jScrollPane1.setViewportView(listArea);
 
-        addressField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        addressField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 addressFieldActionPerformed(evt);
             }
         });
@@ -248,15 +278,19 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         Address.setText("Address");
 
         listPeopleButton.setText("Reset");
-        listPeopleButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        listPeopleButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 listPeopleButtonActionPerformed(evt);
             }
         });
 
         searchButton.setText("Search");
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        searchButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 searchButtonActionPerformed(evt);
             }
         });
@@ -264,8 +298,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         FirstNameText.setText("First Name");
 
         clearButton.setText("Clear");
-        clearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        clearButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 clearButtonActionPerformed(evt);
             }
         });
@@ -363,28 +399,36 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         joinPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         joinPanel.setPreferredSize(new java.awt.Dimension(580, 270));
 
-        joinLastNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        joinLastNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 joinLastNameFieldActionPerformed(evt);
             }
         });
 
-        joinFirstNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        joinFirstNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 joinFirstNameFieldActionPerformed(evt);
             }
         });
 
-        joinDOBfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        joinDOBfield.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 joinDOBfieldActionPerformed(evt);
             }
         });
 
         DOB2.setText("Date of birth");
 
-        joinAddressField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        joinAddressField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 joinAddressFieldActionPerformed(evt);
             }
         });
@@ -394,8 +438,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         FirstNameText2.setText("First Name");
 
         joinButton.setText("Join");
-        joinButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        joinButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 joinButtonActionPerformed(evt);
             }
         });
@@ -405,8 +451,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         jLabel1.setText("YYYY-MM-DD");
 
         jButton4.setText("START MENU");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton4.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton4ActionPerformed(evt);
             }
         });
@@ -461,7 +509,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                 .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LastNameText2)
                     .addComponent(joinLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 398, Short.MAX_VALUE)
                 .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DOB2)
                     .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -478,20 +526,26 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         searchPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         searchPanel.setPreferredSize(new java.awt.Dimension(580, 270));
 
-        searchLastNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        searchLastNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 searchLastNameFieldActionPerformed(evt);
             }
         });
 
-        searchFirstNameField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        searchFirstNameField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 searchFirstNameFieldActionPerformed(evt);
             }
         });
 
-        searchDOBfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        searchDOBfield.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 searchDOBfieldActionPerformed(evt);
             }
         });
@@ -503,8 +557,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         searchListArea.setRows(5);
         jScrollPane2.setViewportView(searchListArea);
 
-        searchAddressField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        searchAddressField.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 searchAddressFieldActionPerformed(evt);
             }
         });
@@ -512,15 +568,19 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         Address1.setText("Address");
 
         searchRefresh.setText("Reset");
-        searchRefresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        searchRefresh.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 searchRefreshActionPerformed(evt);
             }
         });
 
         searchAreaButton.setText("Search");
-        searchAreaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        searchAreaButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 searchAreaButtonActionPerformed(evt);
             }
         });
@@ -528,8 +588,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         FirstNameText1.setText("First Name");
 
         SearchClearButton.setText("Clear");
-        SearchClearButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        SearchClearButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 SearchClearButtonActionPerformed(evt);
             }
         });
@@ -537,8 +599,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         LastNameText1.setText("Last Name");
 
         jButton5.setText("START MENU");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton5.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 jButton5ActionPerformed(evt);
             }
         });
@@ -555,7 +619,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                         .addComponent(FirstNameText1)
                         .addGap(55, 55, 55)
                         .addComponent(LastNameText1)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 58, Short.MAX_VALUE))
                     .addGroup(searchPanelLayout.createSequentialGroup()
                         .addComponent(searchFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -639,25 +703,35 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         layeredPaneSearch.setLayer(searchPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         switchSearchButton.setText("Search");
-        switchSearchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        switchSearchButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 switchSearchButtonActionPerformed(evt);
             }
         });
 
         mainButton.setText("Admin");
-        mainButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        mainButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 mainButtonActionPerformed(evt);
             }
         });
 
         switchJoinButton.setText("Join");
-        switchJoinButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        switchJoinButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 switchJoinButtonActionPerformed(evt);
             }
         });
+
+        jButton6.setText("Request Help");
+
+        jLabel2.setText("Station Number");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -665,17 +739,41 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainButton)
-                .addGap(88, 88, 88)
-                .addComponent(switchSearchButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(switchJoinButton))
-            .addComponent(layeredPaneSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(mainButton)
+                        .addGap(88, 88, 88)
+                        .addComponent(switchSearchButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(switchJoinButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 57, Short.MAX_VALUE)
+                        .addComponent(layeredPaneSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(stationNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(layeredPaneSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(stationNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(layeredPaneSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 666, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(switchSearchButton)
@@ -988,7 +1086,9 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField joinAddressField;
@@ -1012,6 +1112,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JPanel searchPanel;
     private javax.swing.JButton searchRefresh;
     private javax.swing.JPanel startPanel;
+    private javax.swing.JLabel stationNumberLabel;
     private javax.swing.JButton switchJoinButton;
     private javax.swing.JButton switchJoinButton1;
     private javax.swing.JButton switchSearchButton;
