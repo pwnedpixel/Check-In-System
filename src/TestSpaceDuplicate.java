@@ -8,7 +8,7 @@
  *
  * @author Andrew
  */
-//import Old.TestSpace;
+import Old.TestSpace;
 import java.sql.*;
 import java.util.LinkedList;
 import javax.swing.JTextArea;
@@ -51,8 +51,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         layeredPaneSearch = new javax.swing.JLayeredPane();
         startPanel = new javax.swing.JPanel();
@@ -120,10 +119,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         layeredPaneSearch.setAlignmentY(0.0F);
         layeredPaneSearch.setEnabled(false);
         layeredPaneSearch.setPreferredSize(new java.awt.Dimension(600, 300));
-        layeredPaneSearch.addKeyListener(new java.awt.event.KeyAdapter()
-        {
-            public void keyPressed(java.awt.event.KeyEvent evt)
-            {
+        layeredPaneSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
                 layeredPaneSearchKeyPressed(evt);
             }
         });
@@ -135,12 +132,11 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         switchSearchButton1.setBackground(new java.awt.Color(255, 255, 255));
         switchSearchButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         switchSearchButton1.setForeground(new java.awt.Color(255, 255, 255));
+        switchSearchButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Austin J. Baggio\\Pictures\\P3Images\\CloudButton.png")); // NOI18N
         switchSearchButton1.setText("Search");
         switchSearchButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        switchSearchButton1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        switchSearchButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 switchSearchButton1ActionPerformed(evt);
             }
         });
@@ -148,13 +144,12 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         switchJoinButton1.setBackground(new java.awt.Color(255, 255, 255));
         switchJoinButton1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         switchJoinButton1.setForeground(new java.awt.Color(255, 255, 255));
+        switchJoinButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Austin J. Baggio\\Pictures\\P3Images\\CloudButton.png")); // NOI18N
         switchJoinButton1.setText("Join");
         switchJoinButton1.setBorder(switchJoinButton1.getBorder());
         switchJoinButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        switchJoinButton1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        switchJoinButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 switchJoinButton1ActionPerformed(evt);
             }
         });
@@ -186,70 +181,54 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         adminPanel.setPreferredSize(new java.awt.Dimension(580, 270));
 
         jButton1.setText("Français");
-        jButton1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
         AddUser.setText("Add Person");
-        AddUser.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        AddUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddUserActionPerformed(evt);
             }
         });
 
         jButton2.setText("English");
-        jButton2.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        lastNameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        lastNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lastNameFieldActionPerformed(evt);
             }
         });
 
         jButton3.setText("español");
-        jButton3.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        firstNameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        firstNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstNameFieldActionPerformed(evt);
             }
         });
 
-        DOBfield.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        DOBfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DOBfieldActionPerformed(evt);
             }
         });
 
         RemoveUser.setText("Remove ID:");
-        RemoveUser.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        RemoveUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RemoveUserActionPerformed(evt);
             }
         });
@@ -261,10 +240,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         listArea.setRows(5);
         jScrollPane1.setViewportView(listArea);
 
-        addressField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        addressField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressFieldActionPerformed(evt);
             }
         });
@@ -272,19 +249,15 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         Address.setText("Address");
 
         listPeopleButton.setText("Reset");
-        listPeopleButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        listPeopleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listPeopleButtonActionPerformed(evt);
             }
         });
 
         searchButton.setText("Search");
-        searchButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchButtonActionPerformed(evt);
             }
         });
@@ -292,10 +265,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         FirstNameText.setText("First Name");
 
         clearButton.setText("Clear");
-        clearButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        clearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearButtonActionPerformed(evt);
             }
         });
@@ -393,36 +364,28 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         joinPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         joinPanel.setPreferredSize(new java.awt.Dimension(580, 270));
 
-        joinLastNameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        joinLastNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 joinLastNameFieldActionPerformed(evt);
             }
         });
 
-        joinFirstNameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        joinFirstNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 joinFirstNameFieldActionPerformed(evt);
             }
         });
 
-        joinDOBfield.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        joinDOBfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 joinDOBfieldActionPerformed(evt);
             }
         });
 
         DOB2.setText("Date of birth");
 
-        joinAddressField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        joinAddressField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 joinAddressFieldActionPerformed(evt);
             }
         });
@@ -432,10 +395,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         FirstNameText2.setText("First Name");
 
         joinButton.setText("Join");
-        joinButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        joinButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 joinButtonActionPerformed(evt);
             }
         });
@@ -445,10 +406,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         jLabel1.setText("YYYY-MM-DD");
 
         jButton4.setText("START MENU");
-        jButton4.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
@@ -520,26 +479,20 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         searchPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         searchPanel.setPreferredSize(new java.awt.Dimension(580, 270));
 
-        searchLastNameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        searchLastNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchLastNameFieldActionPerformed(evt);
             }
         });
 
-        searchFirstNameField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        searchFirstNameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchFirstNameFieldActionPerformed(evt);
             }
         });
 
-        searchDOBfield.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        searchDOBfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchDOBfieldActionPerformed(evt);
             }
         });
@@ -551,10 +504,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         searchListArea.setRows(5);
         jScrollPane2.setViewportView(searchListArea);
 
-        searchAddressField.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        searchAddressField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchAddressFieldActionPerformed(evt);
             }
         });
@@ -562,19 +513,15 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         Address1.setText("Address");
 
         searchRefresh.setText("Reset");
-        searchRefresh.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        searchRefresh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchRefreshActionPerformed(evt);
             }
         });
 
         searchAreaButton.setText("Search");
-        searchAreaButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        searchAreaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchAreaButtonActionPerformed(evt);
             }
         });
@@ -582,10 +529,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         FirstNameText1.setText("First Name");
 
         SearchClearButton.setText("Clear");
-        SearchClearButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        SearchClearButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchClearButtonActionPerformed(evt);
             }
         });
@@ -593,10 +538,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         LastNameText1.setText("Last Name");
 
         jButton5.setText("START MENU");
-        jButton5.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
@@ -697,28 +640,22 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         layeredPaneSearch.setLayer(searchPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         switchSearchButton.setText("Search");
-        switchSearchButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        switchSearchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 switchSearchButtonActionPerformed(evt);
             }
         });
 
         mainButton.setText("Admin");
-        mainButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        mainButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mainButtonActionPerformed(evt);
             }
         });
 
         switchJoinButton.setText("Join");
-        switchJoinButton.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        switchJoinButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 switchJoinButtonActionPerformed(evt);
             }
         });
