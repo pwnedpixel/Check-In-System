@@ -6,7 +6,7 @@
 public class MonitorGuiManager extends Thread
 {
 
-   // MonitorGui gui = new MonitorGui();
+   MonitorGui gui = new MonitorGui();
 
     public void run()
     {
@@ -40,7 +40,7 @@ public class MonitorGuiManager extends Thread
         {
             public void run()
             {
-                MonitorGui gui = new MonitorGui();
+                //gui = new MonitorGui();
                 gui.setVisible(true);
             }
         });
@@ -49,7 +49,8 @@ public class MonitorGuiManager extends Thread
 
     public void updateMessage(String message)
     {
-        //gui.setMonitoringMessage(message);
+        System.out.println("settting message");
+        gui.setMonitoringMessage(message);
     }
     
      public static void main(String args[])
