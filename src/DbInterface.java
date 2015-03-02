@@ -81,6 +81,7 @@ public class DbInterface
             rs = stmt.executeQuery(query);
             while (rs.next()) {
                 warningStatus = rs.getInt("warningstatus");
+                System.out.println("waning Status: " + warningStatus);
             }
             System.out.println("\n");
         } catch (SQLException e) {
