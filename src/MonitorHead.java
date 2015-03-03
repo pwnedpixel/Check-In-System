@@ -1,3 +1,6 @@
+
+import java.util.LinkedList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,12 +20,17 @@ public class MonitorHead
         MonitorGuiManager monitor = new MonitorGuiManager();
         monitor.run();
         boolean monitoring = true;
+        LinkedList previous = new LinkedList();
         while (monitoring) {
-            monitor.sendStations(personDB.getStations());
+            if (previous != personDB.getStations())
+            {
+                monitor.sendStations(personDB.getStations());
+            }           
             try {
                 Thread.sleep(1000);
             } catch (Exception e) {
             }
+            previous = personDB.getStations();
             System.out.println("hi"+Math.random());
         }
     }   

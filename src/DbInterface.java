@@ -185,10 +185,11 @@ public class DbInterface
     
     public void addStation(String stationID)
     {
-        String query = "INSERT INTO `personsdatabase`.`warning` (`station`, `warningstatus`) VALUES ('"+stationID+"', '0');";
+        String query = "INSERT INTO `personsdatabase`.`warning` (`station`, `warningstatus`) VALUES ('"+stationID+"', '1');";
         try {
             stmt = conn.createStatement();
-            rs = stmt.executeQuery(query);
+            stmt.execute(query);
+            System.out.println("Station added");
         } catch (SQLException e) {
             System.err.println(e);
         } finally {

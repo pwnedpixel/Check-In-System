@@ -31,7 +31,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     public void guiSetup()
     {
         refreshLists();
-        stationNumber = (int) (Math.random()*1000.0);
+        stationNumber = (int) (Math.random()*10000.0);
         stationNumberLabel.setText(Integer.toString(stationNumber));
         joinPanel.setVisible(false);
         searchPanel.setVisible(false);
@@ -1003,7 +1003,6 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton6ActionPerformed
     {//GEN-HEADEREND:event_jButton6ActionPerformed
         personDB.addStation(Integer.toString(stationNumber));
-
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void refreshLists()
