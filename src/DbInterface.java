@@ -72,16 +72,18 @@ public class DbInterface
         System.err.println("Connection Closed");
     }
     
-    public int getWarningStatus()
+    public LinkedList getStations()
     {
-        int warningStatus = 0;
-        String query = "SELECT * FROM personsdatabase.warning WHERE `station` = '" + "default" + "'";
+        LinkedList stationNumbers = new LinkedList();
+        String query = "SELECT * FROM personsdatabase.warning";
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(query);
             while (rs.next()) {
-                warningStatus = rs.getInt("warningstatus");
-                System.out.println("waning Status: " + warningStatus);
+                if (rs.getInt("warningstatus")==1)
+                {
+                    stationNumbers.add(rs.getString("station"));
+                }
             }
             System.out.println("\n");
         } catch (SQLException e) {
@@ -95,7 +97,7 @@ public class DbInterface
                 }
             }
         }
-        return warningStatus;
+        return stationNumbers;
     }
 
     /**
@@ -180,6 +182,26 @@ public class DbInterface
             }
         }
     }
+    
+    public void addStation(String stationID)
+    {
+        String query = "INSERT INTO `personsdatabase`.`warning` (`station`, `warningstatus`) VALUES ('"+stationID+"', '0');";
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
 
     /**
      * Gets an array of strings containing information on each person in the

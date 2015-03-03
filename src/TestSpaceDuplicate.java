@@ -117,7 +117,6 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(1000, 700));
         setResizable(false);
 
         layeredPaneSearch.setBackground(new java.awt.Color(0, 0, 204));
@@ -730,6 +729,13 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         });
 
         jButton6.setText("Request Help");
+        jButton6.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Station Number");
 
@@ -993,6 +999,12 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         invisAll();
         startPanel.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton6ActionPerformed
+    {//GEN-HEADEREND:event_jButton6ActionPerformed
+        personDB.addStation(Integer.toString(stationNumber));
+
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void refreshLists()
     {

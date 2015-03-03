@@ -1,4 +1,7 @@
 
+import java.util.LinkedList;
+
+
 /**
  *
  * @author Andrew
@@ -47,10 +50,10 @@ public class MonitorGuiManager extends Thread
 
     }
 
-    public void updateMessage(String message)
+    public void sendStations(LinkedList stations)
     {
         System.out.println("settting message");
-        gui.setMonitoringMessage(message);
+        gui.setStationList(stations);
     }
     
      public static void main(String args[])

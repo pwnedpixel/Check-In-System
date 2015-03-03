@@ -386,9 +386,14 @@ public class MonitorGui extends javax.swing.JFrame
         
     }//GEN-LAST:event_startMonitorActionPerformed
 
-    public void setMonitoringMessage(String message)
+    public void setStationList(LinkedList stations)
     {
-        warningLabel.setText(message);
+        String current = "";
+        for(int x = 0;x<stations.size();x++)
+        {
+            current = warningLabel.getText();
+            warningLabel.setText(current+"\n"+stations.get(x));
+        }
     }
     
     private void refreshList(JTextArea listToRefresh)

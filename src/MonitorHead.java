@@ -16,16 +16,9 @@ public class MonitorHead
         DbInterface personDB = new DbInterface();
         MonitorGuiManager monitor = new MonitorGuiManager();
         monitor.run();
-        monitor.updateMessage("Not Monitoring...");
         boolean monitoring = true;
         while (monitoring) {
-            if (personDB.getWarningStatus() == 1) {
-                monitor.updateMessage("EMERGENCY!");
-                System.out.println("Emerg");
-            } else {
-                monitor.updateMessage("No Warnings");
-                System.out.println("noemerg");
-            }
+            monitor.sendStations(personDB.getStations());
             try {
                 Thread.sleep(1000);
             } catch (Exception e) {
