@@ -114,7 +114,6 @@ public class DbInterface
         try {
             stmt = conn.createStatement();
             stmt.execute(query);
-            resetIDCount();
             System.out.println(firstName + " " + lastName + " added to list");
         } catch (SQLException e) {
             System.err.println(e);
@@ -134,13 +133,12 @@ public class DbInterface
      *
      * @param ID The id associated with the person
      */
-    public void removePerson(String ID)
+    public void removePerson(String station)
     {
-        String query = "DELETE FROM `personsdatabase`.`personstable` WHERE `personstable`.`ID` = '" + ID + "'";
+        String query = "DELETE FROM `personsdatabase`.`warning` WHERE `station`='"+station+"';";
         try {
             stmt = conn.createStatement();
             stmt.execute(query);
-            resetIDCount();
         } catch (SQLException e) {
             System.err.println(e);
         } finally {
@@ -190,6 +188,25 @@ public class DbInterface
             stmt = conn.createStatement();
             stmt.execute(query);
             System.out.println("Station added");
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
+    public void removeStation(String stationID)
+    {
+        String query = "DELETE FROM `personsdatabase`.`warning` WHERE `station`='"+stationID+"';";
+        try {
+            stmt = conn.createStatement();
+            stmt.execute(query);
         } catch (SQLException e) {
             System.err.println(e);
         } finally {
@@ -360,39 +377,6 @@ public class DbInterface
             }
         }
         return searchResults;
-    }
-
-    /**
-     * Re assigns an ID to each person starting at 1 in the order they were
-     * entered into the database.
-     */
-    public void resetIDCount() //currently not used
-    {
-        /*
-         try
-         {
-         String query = "SET @count = 0;";
-         stmt = conn.createStatement();
-         stmt.execute(query);
-         query = "UPDATE `personstable` SET `personstable`.`ID` = @count:= @count + 1;";
-         stmt.execute(query);
-         } catch (SQLException e)
-         {
-         System.err.println(e);
-         } finally
-         {
-         if (stmt != null)
-         {
-         try
-         {
-         stmt.close();
-         } catch (SQLException e)
-         {
-         e.printStackTrace();
-         }
-         }
-         }
-         */
     }
 
     /**

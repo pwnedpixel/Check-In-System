@@ -27,7 +27,7 @@ public class MonitorHead
                 monitor.sendStations(personDB.getStations());
             }           
             try {
-                Thread.sleep(1000);
+                Thread.sleep(250);
             } catch (Exception e) {
             }
             previous = personDB.getStations();
