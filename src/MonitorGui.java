@@ -44,7 +44,7 @@ public class MonitorGui extends javax.swing.JFrame
         DEL10.setVisible(false);
         for (int x = 0; x<buttons.size();x++)
         {
-            buttons.get()
+           
         }
     }
 
