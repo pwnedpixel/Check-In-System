@@ -16,6 +16,7 @@ public class MonitorGui extends javax.swing.JFrame
 
     private DbInterface personDB = new DbInterface();
     private boolean monitoring = false;
+    private int previousCount = -1;
 
     /**
      * Creates new form AdminMonitor
@@ -25,6 +26,16 @@ public class MonitorGui extends javax.swing.JFrame
         System.out.println("Monitor GUI created");
         initComponents();
         refreshList(listArea);
+        setupDelButtons();
+    }
+
+    private void setupDelButtons()
+    {
+        int size = personDB.getStations().size();
+        System.out.println("Previous: " + previousCount+"Current: "+size);
+        if (previousCount != size)
+        {
+        previousCount = size;
         DEL1.setVisible(false);
         DEL2.setVisible(false);
         DEL3.setVisible(false);
@@ -35,22 +46,6 @@ public class MonitorGui extends javax.swing.JFrame
         DEL8.setVisible(false);
         DEL9.setVisible(false);
         DEL10.setVisible(false);
-        setupDelButtons();
-    }
-
-    private void setupDelButtons()
-    {
-        int size = personDB.getStations().size();
-//        DEL1.setVisible(true);
-//        DEL2.setVisible(true);
-//        DEL3.setVisible(true);
-//        DEL4.setVisible(true);
-//        DEL5.setVisible(true);
-//        DEL6.setVisible(true);
-//        DEL7.setVisible(true);
-//        DEL8.setVisible(true);
-//        DEL9.setVisible(true);
-//        DEL10.setVisible(true);
         System.out.println(size);
         if (size > 0) {
             DEL1.setVisible(true);
@@ -83,6 +78,7 @@ public class MonitorGui extends javax.swing.JFrame
             DEL10.setVisible(true);
         }
         System.out.println("done");
+        }
     }
 
     /**

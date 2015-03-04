@@ -52,7 +52,6 @@ public class MonitorGuiManager extends Thread
 
     public void sendStations(LinkedList stations)
     {
-        System.out.println("settting message");
         gui.setStationList(stations);
     }
     
