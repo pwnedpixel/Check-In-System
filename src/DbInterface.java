@@ -85,7 +85,6 @@ public class DbInterface
                     stationNumbers.add(rs.getString("station"));
                 }
             }
-            System.out.println("\n");
         } catch (SQLException e) {
             System.err.println(e);
         } finally {
@@ -167,7 +166,6 @@ public class DbInterface
                 String LastName = rs.getString("LastName");
                 System.out.println(IDnumber + " " + FirstName + " " + LastName);
             }
-            System.out.println("\n");
         } catch (SQLException e) {
             System.err.println(e);
         } finally {
@@ -187,7 +185,6 @@ public class DbInterface
         try {
             stmt = conn.createStatement();
             stmt.execute(query);
-            System.out.println("Station added");
         } catch (SQLException e) {
             System.err.println(e);
         } finally {

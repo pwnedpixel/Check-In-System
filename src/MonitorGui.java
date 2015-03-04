@@ -16,7 +16,6 @@ public class MonitorGui extends javax.swing.JFrame
 
     private DbInterface personDB = new DbInterface();
     private boolean monitoring = false;
-    LinkedList tempList = new LinkedList();
 
     /**
      * Creates new form AdminMonitor
@@ -26,12 +25,6 @@ public class MonitorGui extends javax.swing.JFrame
         System.out.println("Monitor GUI created");
         initComponents();
         refreshList(listArea);
-        setupDelButtons();
-    }
-    
-    private void setupDelButtons()
-    {
-        LinkedList buttons = new LinkedList();
         DEL1.setVisible(false);
         DEL2.setVisible(false);
         DEL3.setVisible(false);
@@ -42,10 +35,54 @@ public class MonitorGui extends javax.swing.JFrame
         DEL8.setVisible(false);
         DEL9.setVisible(false);
         DEL10.setVisible(false);
-        for (int x = 0; x<buttons.size();x++)
-        {
-           
+        setupDelButtons();
+    }
+
+    private void setupDelButtons()
+    {
+        int size = personDB.getStations().size();
+//        DEL1.setVisible(true);
+//        DEL2.setVisible(true);
+//        DEL3.setVisible(true);
+//        DEL4.setVisible(true);
+//        DEL5.setVisible(true);
+//        DEL6.setVisible(true);
+//        DEL7.setVisible(true);
+//        DEL8.setVisible(true);
+//        DEL9.setVisible(true);
+//        DEL10.setVisible(true);
+        System.out.println(size);
+        if (size > 0) {
+            DEL1.setVisible(true);
         }
+        if (size >1) {
+            DEL2.setVisible(true);
+        }
+        if (size > 2) {
+            DEL3.setVisible(true);
+        }
+        if (size > 3) {
+            DEL4.setVisible(true);
+        }
+        if (size > 4) {
+            DEL5.setVisible(true);
+        }
+        if (size > 5) {
+            DEL6.setVisible(true);
+        }
+        if (size > 6) {
+            DEL7.setVisible(true);
+        }
+        if (size > 7) {
+            DEL8.setVisible(true);
+        }
+        if (size > 8) {
+            DEL9.setVisible(true);
+        }
+        if (size > 9) {
+            DEL10.setVisible(true);
+        }
+        System.out.println("done");
     }
 
     /**
@@ -202,6 +239,7 @@ public class MonitorGui extends javax.swing.JFrame
 
         jLabel2.setText("Station ID:");
 
+        DEL1.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL1.setText("DEL");
         DEL1.addActionListener(new java.awt.event.ActionListener()
         {
@@ -219,6 +257,7 @@ public class MonitorGui extends javax.swing.JFrame
         warningLabel.setAutoscrolls(false);
         jScrollPane2.setViewportView(warningLabel);
 
+        DEL2.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL2.setText("DEL");
         DEL2.addActionListener(new java.awt.event.ActionListener()
         {
@@ -228,6 +267,7 @@ public class MonitorGui extends javax.swing.JFrame
             }
         });
 
+        DEL3.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL3.setText("DEL");
         DEL3.addActionListener(new java.awt.event.ActionListener()
         {
@@ -237,6 +277,7 @@ public class MonitorGui extends javax.swing.JFrame
             }
         });
 
+        DEL4.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL4.setText("DEL");
         DEL4.addActionListener(new java.awt.event.ActionListener()
         {
@@ -246,6 +287,7 @@ public class MonitorGui extends javax.swing.JFrame
             }
         });
 
+        DEL5.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL5.setText("DEL");
         DEL5.addActionListener(new java.awt.event.ActionListener()
         {
@@ -255,6 +297,7 @@ public class MonitorGui extends javax.swing.JFrame
             }
         });
 
+        DEL6.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL6.setText("DEL");
         DEL6.addActionListener(new java.awt.event.ActionListener()
         {
@@ -264,6 +307,7 @@ public class MonitorGui extends javax.swing.JFrame
             }
         });
 
+        DEL7.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL7.setText("DEL");
         DEL7.addActionListener(new java.awt.event.ActionListener()
         {
@@ -273,6 +317,7 @@ public class MonitorGui extends javax.swing.JFrame
             }
         });
 
+        DEL8.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL8.setText("DEL");
         DEL8.addActionListener(new java.awt.event.ActionListener()
         {
@@ -282,6 +327,7 @@ public class MonitorGui extends javax.swing.JFrame
             }
         });
 
+        DEL9.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL9.setText("DEL");
         DEL9.addActionListener(new java.awt.event.ActionListener()
         {
@@ -291,6 +337,7 @@ public class MonitorGui extends javax.swing.JFrame
             }
         });
 
+        DEL10.setFont(new java.awt.Font("Tahoma", 0, 9)); // NOI18N
         DEL10.setText("DEL");
         DEL10.addActionListener(new java.awt.event.ActionListener()
         {
@@ -545,52 +592,62 @@ public class MonitorGui extends javax.swing.JFrame
 
     private void DEL10ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL10ActionPerformed
     {//GEN-HEADEREND:event_DEL10ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(9).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL10ActionPerformed
 
     private void DEL9ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL9ActionPerformed
     {//GEN-HEADEREND:event_DEL9ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(8).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL9ActionPerformed
 
     private void DEL8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL8ActionPerformed
     {//GEN-HEADEREND:event_DEL8ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(7).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL8ActionPerformed
 
     private void DEL7ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL7ActionPerformed
     {//GEN-HEADEREND:event_DEL7ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(6).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL7ActionPerformed
 
     private void DEL6ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL6ActionPerformed
     {//GEN-HEADEREND:event_DEL6ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(5).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL6ActionPerformed
 
     private void DEL5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL5ActionPerformed
     {//GEN-HEADEREND:event_DEL5ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(4).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL5ActionPerformed
 
     private void DEL4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL4ActionPerformed
     {//GEN-HEADEREND:event_DEL4ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(3).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL4ActionPerformed
 
     private void DEL3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL3ActionPerformed
     {//GEN-HEADEREND:event_DEL3ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(2).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL3ActionPerformed
 
     private void DEL2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL2ActionPerformed
     {//GEN-HEADEREND:event_DEL2ActionPerformed
-        // TODO add your handling code here:
+        personDB.removeStation(personDB.getStations().get(1).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL2ActionPerformed
 
     private void DEL1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_DEL1ActionPerformed
     {//GEN-HEADEREND:event_DEL1ActionPerformed
         personDB.removeStation(personDB.getStations().get(0).toString());
+        setupDelButtons();
     }//GEN-LAST:event_DEL1ActionPerformed
 
     private void resetWarningIdButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_resetWarningIdButtonActionPerformed
@@ -606,6 +663,7 @@ public class MonitorGui extends javax.swing.JFrame
             current = warningLabel.getText();
             warningLabel.setText(current + stations.get(x) + "\n");
         }
+        setupDelButtons();
     }
 
     private void refreshList(JTextArea listToRefresh)

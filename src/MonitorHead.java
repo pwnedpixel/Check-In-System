@@ -22,7 +22,7 @@ public class MonitorHead
         boolean monitoring = true;
         LinkedList previous = new LinkedList();
         while (monitoring) {
-            if (previous != personDB.getStations())
+            if (personDB.getStations()!=previous)
             {
                 monitor.sendStations(personDB.getStations());
             }           
@@ -31,7 +31,6 @@ public class MonitorHead
             } catch (Exception e) {
             }
             previous = personDB.getStations();
-            System.out.println("hi"+Math.random());
         }
     }   
 }
