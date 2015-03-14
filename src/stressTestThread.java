@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Timer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -49,6 +51,11 @@ public class stressTestThread extends Thread
         } catch (Exception e) {
             // Handle errors for Class.forName
             e.printStackTrace();
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(stressTestThread.class.getName()).log(Level.SEVERE, null, ex);
         }
         addStations();
     }
