@@ -12,7 +12,7 @@ import java.applet.*;
 
 public class AppletClass
 {
-    //TestSpaceDuplicate gui = new TestSpaceDuplicate();
+    //TestSpaceDuplicate gui = new TestSpaceDuplicateOld();
     
     public void init() {
         try {
@@ -43,7 +43,7 @@ public class AppletClass
         {
             public void run()
             {
-                new TestSpaceDuplicate().setVisible(true);
+                new TestSpaceDuplicateOld().setVisible(true);
             }
         });
         
