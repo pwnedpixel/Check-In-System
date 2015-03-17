@@ -36,6 +36,9 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         joinPanel.setVisible(false);
         searchPanel.setVisible(false);
         adminPanel.setVisible(false);
+        mainButton.setVisible(false);
+        switchSearchButton.setVisible(false);
+        switchJoinButton.setVisible(false);
     }
     
     public void invisAll()

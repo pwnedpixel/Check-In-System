@@ -132,10 +132,12 @@ public class DbInterface
      *
      * @param ID The id associated with the person
      */
-    public void removePerson(String station)
+    public void removePerson(String ID)
     {
-        String query = "DELETE FROM `personsdatabase`.`warning` WHERE `station`='"+station+"';";
+        System.out.println("deleting");
+        String query = "DELETE FROM `personsdatabase`.`personstable` WHERE `ID`='"+ID+"';";
         try {
+            System.out.println("deleting");
             stmt = conn.createStatement();
             stmt.execute(query);
         } catch (SQLException e) {
