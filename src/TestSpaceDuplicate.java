@@ -525,8 +525,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                                 .addGap(221, 221, 221)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(joinPanelLayout.createSequentialGroup()
-                                .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel1)))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -737,7 +737,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         );
         layeredPaneSearchLayout.setVerticalGroup(
             layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(joinPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
+            .addComponent(joinPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 632, Short.MAX_VALUE)
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(adminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE))
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1054,12 +1054,20 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     {//GEN-HEADEREND:event_switchSearchButton1ActionPerformed
         invisAll();
         searchPanel.setVisible(true);
+        searchFirstNameField.setText("");
+        searchLastNameField.setText("");
+        searchAddressField.setText("");
+        searchDOBfield.setText("");
     }//GEN-LAST:event_switchSearchButton1ActionPerformed
 
     private void switchJoinButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_switchJoinButton1ActionPerformed
     {//GEN-HEADEREND:event_switchJoinButton1ActionPerformed
         invisAll();
         joinPanel.setVisible(true);
+        joinFirstNameField.setText("");
+        joinLastNameField.setText("");
+        joinAddressField.setText("");
+        joinDOBfield.setText("");
     }//GEN-LAST:event_switchJoinButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
