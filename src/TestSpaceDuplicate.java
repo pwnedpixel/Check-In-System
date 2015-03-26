@@ -503,57 +503,55 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         joinPanelLayout.setHorizontalGroup(
             joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(joinPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(joinButton, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(joinPanelLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(joinButton, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(joinPanelLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(joinPanelLayout.createSequentialGroup()
-                                    .addComponent(LastNameText2)
-                                    .addGap(41, 41, 41))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, joinPanelLayout.createSequentialGroup()
-                                    .addComponent(DOB2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                             .addGroup(joinPanelLayout.createSequentialGroup()
-                                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Address2)
-                                    .addComponent(FirstNameText2))
-                                .addGap(40, 40, 40)))
-                        .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FirstNameText2)
+                                .addGap(143, 143, 143))
+                            .addComponent(Address2)
                             .addComponent(joinDOBfield, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(joinLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(joinPanelLayout.createSequentialGroup()
-                                .addComponent(joinFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(221, 221, 221)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DOB2)
                             .addGroup(joinPanelLayout.createSequentialGroup()
                                 .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel1)))))
+                                .addComponent(jLabel1))
+                            .addComponent(LastNameText2)
+                            .addComponent(joinLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(joinFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         joinPanelLayout.setVerticalGroup(
             joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, joinPanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
-                    .addComponent(joinFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FirstNameText2))
-                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(joinLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LastNameText2))
-                .addGap(19, 19, 19)
-                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DOB2)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(joinDOBfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Address2))
-                .addGap(190, 190, 190)
+                    .addGroup(joinPanelLayout.createSequentialGroup()
+                        .addComponent(FirstNameText2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(joinFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LastNameText2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(joinLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DOB2)
+                        .addGap(1, 1, 1)
+                        .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Address2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(joinDOBfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(189, 189, 189)
                 .addComponent(joinButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -605,7 +603,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         Address1.setText("Address");
 
         searchRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SmallCopyButtonGreen.png"))); // NOI18N
-        searchRefresh.setText("Reset");
+        searchRefresh.setText("Refresh");
         searchRefresh.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         searchRefresh.addActionListener(new java.awt.event.ActionListener()
         {
@@ -720,7 +718,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                     .addComponent(SearchClearButton)
                     .addComponent(searchRefresh))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
                 .addContainerGap())
@@ -740,7 +738,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         );
         layeredPaneSearchLayout.setVerticalGroup(
             layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(joinPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 632, Short.MAX_VALUE)
+            .addComponent(joinPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(adminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE))
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1169,10 +1167,28 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
     private void updateLabels(String language)
     {
+        //Start Page
         FirstNameText.setText(personDB.getTitle("FirstName", language));
         switchJoinButton1.setText(personDB.getTitle("Join", language));
         switchSearchButton1.setText(personDB.getTitle("Search",language));
         helpButton.setText(personDB.getTitle("Help", language));
+        
+        //Join Page
+        FirstNameText2.setText(personDB.getTitle("FirstName", language));
+        LastNameText2.setText(personDB.getTitle("LastName",language));
+        DOB2.setText(personDB.getTitle("DOB", language));
+        Address2.setText(personDB.getTitle("Address", language));
+        joinButton.setText(personDB.getTitle("Join",language));
+        
+        //Search Page
+        LastNameText1.setText(personDB.getTitle("LastName", language));
+        FirstNameText1.setText(personDB.getTitle("FirstName", language));
+        DOB1.setText(personDB.getTitle("DOB",language));
+        Address1.setText(personDB.getTitle("Address", language));
+        searchAreaButton.setText(personDB.getTitle("Search", language));
+        SearchClearButton.setText(personDB.getTitle("Clear", language));
+        searchRefresh.setText(personDB.getTitle("Refresh",language));
+        
     }
 
     /**
