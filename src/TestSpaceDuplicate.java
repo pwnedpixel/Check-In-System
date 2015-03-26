@@ -113,13 +113,13 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         switchSearchButton = new javax.swing.JButton();
         mainButton = new javax.swing.JButton();
         switchJoinButton = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        helpButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         stationIdLabel = new javax.swing.JTextField();
         lockInButton = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        englishButton = new javax.swing.JButton();
+        frenchButton = new javax.swing.JButton();
+        spanishbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(206, 229, 240));
@@ -790,16 +790,16 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/ButtonBlue.png"))); // NOI18N
-        jButton6.setText("Request Help");
-        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton6.addActionListener(new java.awt.event.ActionListener()
+        helpButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        helpButton.setForeground(new java.awt.Color(255, 255, 255));
+        helpButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/ButtonBlue.png"))); // NOI18N
+        helpButton.setText("Request Help");
+        helpButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        helpButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton6ActionPerformed(evt);
+                helpButtonActionPerformed(evt);
             }
         });
 
@@ -816,16 +816,30 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
-        jButton7.setText("English");
-
-        jButton8.setText("Francais");
-
-        jButton9.setText("Spanish");
-        jButton9.addActionListener(new java.awt.event.ActionListener()
+        englishButton.setText("English");
+        englishButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton9ActionPerformed(evt);
+                englishButtonActionPerformed(evt);
+            }
+        });
+
+        frenchButton.setText("Francais");
+        frenchButton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                frenchButtonActionPerformed(evt);
+            }
+        });
+
+        spanishbutton.setText("Spanish");
+        spanishbutton.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                spanishbuttonActionPerformed(evt);
             }
         });
 
@@ -847,7 +861,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                         .addComponent(layeredPaneSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(helpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -855,9 +869,9 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                                     .addComponent(lockInButton)
                                     .addComponent(stationIdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jButton9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                        .addComponent(spanishbutton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(englishButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(frenchButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addGap(52, 52, 52))))
         );
         layout.setVerticalGroup(
@@ -872,13 +886,13 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lockInButton)
                         .addGap(103, 103, 103)
-                        .addComponent(jButton7)
+                        .addComponent(englishButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
+                        .addComponent(frenchButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9)
+                        .addComponent(spanishbutton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(helpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(layeredPaneSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1108,10 +1122,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         startPanel.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton6ActionPerformed
-    {//GEN-HEADEREND:event_jButton6ActionPerformed
+    private void helpButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_helpButtonActionPerformed
+    {//GEN-HEADEREND:event_helpButtonActionPerformed
         personDB.addStation(stationID);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_helpButtonActionPerformed
 
     private void lockInButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_lockInButtonActionPerformed
     {//GEN-HEADEREND:event_lockInButtonActionPerformed
@@ -1120,10 +1134,20 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         lockInButton.setVisible(false);
     }//GEN-LAST:event_lockInButtonActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton9ActionPerformed
-    {//GEN-HEADEREND:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    private void spanishbuttonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_spanishbuttonActionPerformed
+    {//GEN-HEADEREND:event_spanishbuttonActionPerformed
+        updateLabels("Spanish");
+    }//GEN-LAST:event_spanishbuttonActionPerformed
+
+    private void englishButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_englishButtonActionPerformed
+    {//GEN-HEADEREND:event_englishButtonActionPerformed
+        updateLabels("English");
+    }//GEN-LAST:event_englishButtonActionPerformed
+
+    private void frenchButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_frenchButtonActionPerformed
+    {//GEN-HEADEREND:event_frenchButtonActionPerformed
+        updateLabels("French");
+    }//GEN-LAST:event_frenchButtonActionPerformed
 
     private void refreshLists()
     {
@@ -1146,11 +1170,9 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private void updateLabels(String language)
     {
         FirstNameText.setText(personDB.getTitle("FirstName", language));
-        LastNameText.setText(personDB.getTitle("LastName", language));
-        AddUser.setText(personDB.getTitle("Add", language));
-        RemoveUser.setText(personDB.getTitle("Remove", language));
-        DOB.setText(personDB.getTitle("DOB", language));
-        Address.setText(personDB.getTitle("Address", language));
+        switchJoinButton1.setText(personDB.getTitle("Join", language));
+        switchSearchButton1.setText(personDB.getTitle("Search",language));
+        helpButton.setText(personDB.getTitle("Help", language));
     }
 
     /**
@@ -1215,17 +1237,16 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JTextField addressField;
     private javax.swing.JPanel adminPanel;
     private javax.swing.JButton clearButton;
+    private javax.swing.JButton englishButton;
     private javax.swing.JTextField firstNameField;
+    private javax.swing.JButton frenchButton;
+    private javax.swing.JButton helpButton;
     private javax.swing.JTextField idField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1251,6 +1272,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JTextArea searchListArea;
     private javax.swing.JPanel searchPanel;
     private javax.swing.JButton searchRefresh;
+    private javax.swing.JButton spanishbutton;
     private javax.swing.JPanel startPanel;
     private javax.swing.JTextField stationIdLabel;
     private javax.swing.JButton switchJoinButton;
