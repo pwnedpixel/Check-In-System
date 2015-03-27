@@ -58,6 +58,7 @@ public class stressTestThread extends Thread
             Logger.getLogger(stressTestThread.class.getName()).log(Level.SEVERE, null, ex);
         }
         addStations();
+        Thread.yield();
     }
     
     public void addStations()

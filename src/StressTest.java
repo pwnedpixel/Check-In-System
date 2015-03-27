@@ -66,7 +66,7 @@ public class StressTest
     
     public void addThreadStations()
     {
-        for (int x =0;x<50;x++)
+        for (int x =0;x<1;x++)
         {
             (new stressTestThread()).start();
         }
