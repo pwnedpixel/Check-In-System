@@ -18,6 +18,18 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     public DbInterface personDB = new DbInterface();
     private String currentScreen = "Main";
     public String stationID = "0";
+    private String[] firstNameLang = {"First Name","Prénom","Nombre"};
+    private String[] lastNameLang = {"Last Name","Nom de Famille","Apellido"};
+    private String[] addLang = {"Add User","Ajouté","Añadir persona"};
+    private String[] DOBLang = {"Date of birth","Date de naissance","Fecha de nacimiento"};
+    private String[] removeLang = {"Remove User","Suprimé","Eliminar"};
+    private String[] addressLang = {"Address","Addresse","Direcciòn"};
+    private String[] searchLang = {"Search","recherche","Búsqueda"};
+    private String[] helpLang = {"Request Help","Aide Requis","Ayuda"};
+    private String[] joinLang = {"Join","Joindre","Joindre"};
+    private String[] clearLang = {"Clear","Remettre","Reajustar"};
+    private String[] refreshLang = {"Refresh","rafraîchir","Refrescar"};
+    private String[] startMenuLang = {"Main Menu","menu principal","menú principal"};
 
     /**
      * Creates new form NewJFrame
@@ -64,11 +76,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         switchSearchButton1 = new javax.swing.JButton();
         switchJoinButton1 = new javax.swing.JButton();
         adminPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         AddUser = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         lastNameField = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
         firstNameField = new javax.swing.JTextField();
         DOBfield = new javax.swing.JTextField();
         RemoveUser = new javax.swing.JButton();
@@ -94,7 +103,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         joinButton = new javax.swing.JButton();
         LastNameText2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        startMenuButton = new javax.swing.JButton();
         searchPanel = new javax.swing.JPanel();
         searchLastNameField = new javax.swing.JTextField();
         searchFirstNameField = new javax.swing.JTextField();
@@ -109,7 +118,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         FirstNameText1 = new javax.swing.JLabel();
         SearchClearButton = new javax.swing.JButton();
         LastNameText1 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        searchStartMenuButton = new javax.swing.JButton();
         switchSearchButton = new javax.swing.JButton();
         mainButton = new javax.swing.JButton();
         switchJoinButton = new javax.swing.JButton();
@@ -202,17 +211,6 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         adminPanel.setForeground(new java.awt.Color(255, 255, 255));
         adminPanel.setPreferredSize(new java.awt.Dimension(580, 270));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SmallCopyButtonGreen.png"))); // NOI18N
-        jButton1.setText("Français");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         AddUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/LongGreen.png"))); // NOI18N
         AddUser.setText("Add Person");
         AddUser.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -224,33 +222,11 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SmallCopyButtonGreen.png"))); // NOI18N
-        jButton2.setText("English");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         lastNameField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 lastNameFieldActionPerformed(evt);
-            }
-        });
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SmallCopyButtonGreen.png"))); // NOI18N
-        jButton3.setText("español");
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jButton3ActionPerformed(evt);
             }
         });
 
@@ -342,18 +318,13 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             .addGroup(adminPanelLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, adminPanelLayout.createSequentialGroup()
                             .addComponent(RemoveUser, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(AddUser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(listPeopleButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(listPeopleButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(adminPanelLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
@@ -362,9 +333,9 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                         .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 85, Short.MAX_VALUE))))
+                        .addGap(0, 43, Short.MAX_VALUE))))
             .addGroup(adminPanelLayout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,13 +383,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                         .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(RemoveUser)
                             .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(50, 50, 50)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 388, Short.MAX_VALUE)
                         .addComponent(listPeopleButton))
                     .addComponent(jScrollPane1))
                 .addGap(21, 21, 21))
@@ -486,15 +451,15 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
         jLabel1.setText("YYYY-MM-DD");
 
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SmallCopyButton.PNG"))); // NOI18N
-        jButton4.setText("Start Menu");
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.addActionListener(new java.awt.event.ActionListener()
+        startMenuButton.setForeground(new java.awt.Color(255, 255, 255));
+        startMenuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SmallCopyButton.PNG"))); // NOI18N
+        startMenuButton.setText("Start Menu");
+        startMenuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        startMenuButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton4ActionPerformed(evt);
+                startMenuButtonActionPerformed(evt);
             }
         });
 
@@ -510,9 +475,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                     .addGroup(joinPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(joinPanelLayout.createSequentialGroup()
-                                .addComponent(FirstNameText2)
-                                .addGap(143, 143, 143))
+                            .addComponent(FirstNameText2)
                             .addComponent(Address2)
                             .addComponent(joinDOBfield, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DOB2)
@@ -524,7 +487,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                             .addComponent(joinLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(joinFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(startMenuButton)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         joinPanelLayout.setVerticalGroup(
@@ -532,7 +495,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, joinPanelLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
+                    .addComponent(startMenuButton)
                     .addGroup(joinPanelLayout.createSequentialGroup()
                         .addComponent(FirstNameText2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -639,14 +602,14 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
         LastNameText1.setText("Last Name");
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/LongGreen.png"))); // NOI18N
-        jButton5.setText("START MENU");
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.addActionListener(new java.awt.event.ActionListener()
+        searchStartMenuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/LongGreen.png"))); // NOI18N
+        searchStartMenuButton.setText("START MENU");
+        searchStartMenuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        searchStartMenuButton.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton5ActionPerformed(evt);
+                searchStartMenuButtonActionPerformed(evt);
             }
         });
 
@@ -691,7 +654,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                             .addComponent(jScrollPane2)
                             .addGroup(searchPanelLayout.createSequentialGroup()
                                 .addGap(200, 200, 200)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(searchStartMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -720,7 +683,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(searchStartMenuButton)
                 .addContainerGap())
         );
 
@@ -738,7 +701,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         );
         layeredPaneSearchLayout.setVerticalGroup(
             layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(joinPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
+            .addComponent(joinPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 632, Short.MAX_VALUE)
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(adminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE))
             .addGroup(layeredPaneSearchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -936,21 +899,6 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         //HERE as test  System.out.println(personDB.getFromID("2015-02-11 10:40:08.054000","DOB"));
     }//GEN-LAST:event_listPeopleButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
-    {//GEN-HEADEREND:event_jButton1ActionPerformed
-        updateLabels("french");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton2ActionPerformed
-    {//GEN-HEADEREND:event_jButton2ActionPerformed
-        updateLabels("english");
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
-    {//GEN-HEADEREND:event_jButton3ActionPerformed
-        updateLabels("spanish");
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void DOBfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DOBfieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DOBfieldActionPerformed
@@ -1108,17 +1056,17 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         joinDOBfield.setText("");
     }//GEN-LAST:event_switchJoinButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton4ActionPerformed
-    {//GEN-HEADEREND:event_jButton4ActionPerformed
+    private void startMenuButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_startMenuButtonActionPerformed
+    {//GEN-HEADEREND:event_startMenuButtonActionPerformed
         invisAll();
         startPanel.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_startMenuButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton5ActionPerformed
-    {//GEN-HEADEREND:event_jButton5ActionPerformed
+    private void searchStartMenuButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_searchStartMenuButtonActionPerformed
+    {//GEN-HEADEREND:event_searchStartMenuButtonActionPerformed
         invisAll();
         startPanel.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_searchStartMenuButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_helpButtonActionPerformed
     {//GEN-HEADEREND:event_helpButtonActionPerformed
@@ -1134,17 +1082,17 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
 
     private void spanishbuttonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_spanishbuttonActionPerformed
     {//GEN-HEADEREND:event_spanishbuttonActionPerformed
-        updateLabels("Spanish");
+        updateLabels(2);
     }//GEN-LAST:event_spanishbuttonActionPerformed
 
     private void englishButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_englishButtonActionPerformed
     {//GEN-HEADEREND:event_englishButtonActionPerformed
-        updateLabels("English");
+        updateLabels(0);
     }//GEN-LAST:event_englishButtonActionPerformed
 
     private void frenchButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_frenchButtonActionPerformed
     {//GEN-HEADEREND:event_frenchButtonActionPerformed
-        updateLabels("French");
+        updateLabels(1);
     }//GEN-LAST:event_frenchButtonActionPerformed
 
     private void refreshLists()
@@ -1165,29 +1113,30 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         }
     }
 
-    private void updateLabels(String language)
+    private void updateLabels(int language)
     {
         //Start Page
-        FirstNameText.setText(personDB.getTitle("FirstName", language));
-        switchJoinButton1.setText(personDB.getTitle("Join", language));
-        switchSearchButton1.setText(personDB.getTitle("Search",language));
-        helpButton.setText(personDB.getTitle("Help", language));
+        switchJoinButton1.setText(joinLang[language]);
+        switchSearchButton1.setText(searchLang[language]);
+        helpButton.setText(helpLang[language]);
         
         //Join Page
-        FirstNameText2.setText(personDB.getTitle("FirstName", language));
-        LastNameText2.setText(personDB.getTitle("LastName",language));
-        DOB2.setText(personDB.getTitle("DOB", language));
-        Address2.setText(personDB.getTitle("Address", language));
-        joinButton.setText(personDB.getTitle("Join",language));
+        FirstNameText2.setText(firstNameLang[language]);
+        LastNameText2.setText(lastNameLang[language]);
+        DOB2.setText(DOBLang[language]);
+        Address2.setText(addressLang[language]);
+        joinButton.setText(joinLang[language]);
+        startMenuButton.setText(startMenuLang[language]);
         
         //Search Page
-        LastNameText1.setText(personDB.getTitle("LastName", language));
-        FirstNameText1.setText(personDB.getTitle("FirstName", language));
-        DOB1.setText(personDB.getTitle("DOB",language));
-        Address1.setText(personDB.getTitle("Address", language));
-        searchAreaButton.setText(personDB.getTitle("Search", language));
-        SearchClearButton.setText(personDB.getTitle("Clear", language));
-        searchRefresh.setText(personDB.getTitle("Refresh",language));
+        LastNameText1.setText(lastNameLang[language]);
+        FirstNameText1.setText(firstNameLang[language]);
+        DOB1.setText(DOBLang[language]);
+        Address1.setText(addressLang[language]);
+        searchAreaButton.setText(searchLang[language]);
+        SearchClearButton.setText(clearLang[language]);
+        searchRefresh.setText(refreshLang[language]);
+        searchStartMenuButton.setText(startMenuLang[language]);
         
     }
 
@@ -1258,11 +1207,6 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JButton frenchButton;
     private javax.swing.JButton helpButton;
     private javax.swing.JTextField idField;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1288,7 +1232,9 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private javax.swing.JTextArea searchListArea;
     private javax.swing.JPanel searchPanel;
     private javax.swing.JButton searchRefresh;
+    private javax.swing.JButton searchStartMenuButton;
     private javax.swing.JButton spanishbutton;
+    private javax.swing.JButton startMenuButton;
     private javax.swing.JPanel startPanel;
     private javax.swing.JTextField stationIdLabel;
     private javax.swing.JButton switchJoinButton;
