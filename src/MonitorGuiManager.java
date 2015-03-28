@@ -50,6 +50,10 @@ public class MonitorGuiManager extends Thread
 
     }
 
+    /**
+     * 
+     * @param stations 
+     */
     public void sendStations(LinkedList stations)
     {
         gui.setStationList(stations);

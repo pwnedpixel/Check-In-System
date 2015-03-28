@@ -19,8 +19,7 @@ public class DbInterface
     ResultSet rs = null;
 
     /**
-     * Constructor. Loads the JDBC drivers and establishes a connection with the
-     * database.
+     * Constructor. Loads the JDBC drivers and establishes a connection with the database.
      */
     public DbInterface()
     {
@@ -45,11 +44,6 @@ public class DbInterface
         }
     }
 
-    public DbInterface(Connection newConn)
-    {
-        conn = newConn;
-    }
-
     /**
      * Safely closes the connection to the database
      */
@@ -71,7 +65,11 @@ public class DbInterface
         }
         System.err.println("Connection Closed");
     }
-    
+
+    /**
+     * 
+     * @return 
+     */
     public LinkedList getStations()
     {
         LinkedList stationNumbers = new LinkedList();
@@ -80,8 +78,7 @@ public class DbInterface
             stmt = conn.createStatement();
             rs = stmt.executeQuery(query);
             while (rs.next()) {
-                if (rs.getInt("warningstatus")==1)
-                {
+                if (rs.getInt("warningstatus") == 1) {
                     stationNumbers.add(rs.getString("station"));
                 }
             }
@@ -100,8 +97,7 @@ public class DbInterface
     }
 
     /**
-     * Adds a Person with given parameters (First name and Last name)to the
-     * database.
+     * Adds a Person with given parameters (First name and Last name)to the database.
      *
      * @param firstName The persons first name
      * @param lastName the persons last name
@@ -135,7 +131,7 @@ public class DbInterface
     public void removePerson(String ID)
     {
         System.out.println("deleting");
-        String query = "DELETE FROM `personsdatabase`.`personstable` WHERE `ID`='"+ID+"';";
+        String query = "DELETE FROM `personsdatabase`.`personstable` WHERE `ID`='" + ID + "';";
         try {
             System.out.println("deleting");
             stmt = conn.createStatement();
@@ -180,49 +176,55 @@ public class DbInterface
             }
         }
     }
-    
-    public void addStation(String stationID)
-    {
-        String query = "INSERT INTO `personsdatabase`.`warning` (`station`, `warningstatus`) VALUES ('"+stationID+"', '1');";
-        try {
-            stmt = conn.createStatement();
-            stmt.execute(query);
-        } catch (SQLException e) {
-            System.err.println(e);
-        } finally {
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-    
-    public void removeStation(String stationID)
-    {
-        String query = "DELETE FROM `personsdatabase`.`warning` WHERE `station`='"+stationID+"';";
-        try {
-            stmt = conn.createStatement();
-            stmt.execute(query);
-        } catch (SQLException e) {
-            System.err.println(e);
-        } finally {
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-    
 
     /**
-     * Gets an array of strings containing information on each person in the
-     * database, each string contains the id, first name as well as last name.
+     * 
+     * @param stationID 
+     */
+    public void addStation(String stationID)
+    {
+        String query = "INSERT INTO `personsdatabase`.`warning` (`station`, `warningstatus`) VALUES ('" + stationID + "', '1');";
+        try {
+            stmt = conn.createStatement();
+            stmt.execute(query);
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * 
+     * @param stationID 
+     */
+    public void removeStation(String stationID)
+    {
+        String query = "DELETE FROM `personsdatabase`.`warning` WHERE `station`='" + stationID + "';";
+        try {
+            stmt = conn.createStatement();
+            stmt.execute(query);
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * Gets an array of strings containing information on each person in the database, each string contains the id, first name as well as last name.
      *
      * @param column The column to which the sort is applied
      * @param order The way the list is sorted (Ascending or descending)
@@ -312,11 +314,14 @@ public class DbInterface
         return toReturn;
     }
 
-    public Connection getConn()
-    {
-        return conn;
-    }
-
+    /**
+     * 
+     * @param firstName
+     * @param lastName
+     * @param bDay
+     * @param address
+     * @return 
+     */
     public LinkedList searchDB(String firstName, String lastName, String bDay, String address)
     {
         LinkedList searchResults = new LinkedList();
@@ -411,12 +416,10 @@ public class DbInterface
     }
 
     /**
-     * Takes and array that is not large enough and returns a new array that is
-     * larger
+     * Takes and array that is not large enough and returns a new array that is larger
      *
      * @param inputArray the smaller array
-     * @return returns a larger array that still contains the contents of the
-     * original array
+     * @return returns a larger array that still contains the contents of the original array
      */
     private String[] expandArray(String[] inputArray)
     {
