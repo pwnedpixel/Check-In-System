@@ -117,6 +117,7 @@ public class MonitorGui extends javax.swing.JFrame
         warningLabel = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         adminPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         adminPanel.setPreferredSize(new java.awt.Dimension(580, 270));
