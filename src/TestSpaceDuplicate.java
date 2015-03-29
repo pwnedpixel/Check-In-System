@@ -1043,6 +1043,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         searchLastNameField.setText("");
         searchAddressField.setText("");
         searchDOBfield.setText("");
+        refreshLists();
     }//GEN-LAST:event_switchSearchButton1ActionPerformed
 
     private void switchJoinButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_switchJoinButton1ActionPerformed
@@ -1136,13 +1137,12 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private void refreshList(JTextArea listToRefresh)
     {
         listToRefresh.setText("");
-        String[] list = personDB.getList("firstname", "ASC");
+        LinkedList list = personDB.getList();
         String current;
-        int x = 0;
-        while (list[x] != null) {
+        //int x = 0;
+        for (int x = 0;x<list.size();x++) {
             current = listToRefresh.getText();
-            listToRefresh.setText(current + list[x] + "\n");
-            x++;
+            listToRefresh.setText(current + list.get(x) + "\n");
         }
     }
 

@@ -353,13 +353,11 @@ public class TestSpace extends javax.swing.JFrame
     private void refreshList()
     {
         listArea.setText("");
-        String[] list = personDB.getList("firstname", "ASC");
+        LinkedList list = personDB.getList("firstname", "ASC", true);
         String current;
-        int x = 0;
-        while (list[x] != null) {
+        for (int x = 0;x<list.size();x++) {
             current = listArea.getText();
-            listArea.setText(current + list[x] + "\n");
-            x++;
+            listArea.setText(current + list.get(x) + "\n");
         }
     }
 

@@ -67,8 +67,8 @@ public class DbInterface
     }
 
     /**
-     * 
-     * @return 
+     *
+     * @return
      */
     public LinkedList getStations()
     {
@@ -178,8 +178,8 @@ public class DbInterface
     }
 
     /**
-     * 
-     * @param stationID 
+     *
+     * @param stationID
      */
     public void addStation(String stationID)
     {
@@ -201,8 +201,8 @@ public class DbInterface
     }
 
     /**
-     * 
-     * @param stationID 
+     *
+     * @param stationID
      */
     public void removeStation(String stationID)
     {
@@ -230,11 +230,12 @@ public class DbInterface
      * @param order The way the list is sorted (Ascending or descending)
      * @return returns a list of people sorted by the given parameters.
      */
-    public String[] getList(String column, String order)
+    public LinkedList getList(String column, String order, boolean includeID)
     {
         /*Order can be ASC for accending or DESC for decending */
-        String[] listOfPeople = new String[10];
+        LinkedList listOfPeople = new LinkedList();
         String query;
+        String IDnumber = "";
         if (column.equals("") && order.equals("")) {
             query = "SELECT * FROM personsdatabase.personstable;";
         } else {
@@ -245,16 +246,19 @@ public class DbInterface
             rs = stmt.executeQuery(query);
             int x = 0;
             while (rs.next()) {
-                String IDnumber = rs.getString("ID");
+                if (includeID) {
+                    IDnumber = rs.getString("ID");
+                }
                 String address = rs.getString("Address");
                 String FirstName = rs.getString("FirstName");
                 String LastName = rs.getString("LastName");
                 String bDay = rs.getString("DOB");
-                listOfPeople[x] = (IDnumber + " " + FirstName + " " + LastName + " " + bDay + " " + address);
-                x++;
-                if (x > listOfPeople.length - 1) {
-                    listOfPeople = expandArray(listOfPeople);
+                if (includeID) {
+                    listOfPeople.add(x, (IDnumber + " " + FirstName + " " + LastName + " " + bDay + " " + address));
+                } else {
+                    listOfPeople.add(x, (FirstName + " " + LastName + " " + bDay + " " + address));
                 }
+                x++;
             }
         } catch (SQLException e) {
             System.err.println(e);
@@ -275,10 +279,10 @@ public class DbInterface
      *
      * @return array of peoples information, one string per person.
      */
-    public String[] getList()
+    public LinkedList getList()
     {
-        String[] listOfPeople;
-        listOfPeople = getList("", "");
+        LinkedList listOfPeople = new LinkedList();
+        listOfPeople = getList("", "", false);
         return listOfPeople;
     }
 
@@ -315,12 +319,12 @@ public class DbInterface
     }
 
     /**
-     * 
+     *
      * @param firstName
      * @param lastName
      * @param bDay
      * @param address
-     * @return 
+     * @return
      */
     public LinkedList searchDB(String firstName, String lastName, String bDay, String address)
     {

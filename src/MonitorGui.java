@@ -438,13 +438,12 @@ public class MonitorGui extends javax.swing.JFrame
     private void refreshList(JTextArea listToRefresh)
     {
         listToRefresh.setText("");
-        String[] list = personDB.getList("firstname", "ASC");
+        LinkedList list = personDB.getList("FirstName","ASC", true);
         String current;
-        int x = 0;
-        while (list[x] != null) {
+        //int x = 0;
+        for (int x = 0;x<list.size();x++) {
             current = listToRefresh.getText();
-            listToRefresh.setText(current + list[x] + "\n");
-            x++;
+            listToRefresh.setText(current + list.get(x) + "\n");
         }
     }
 
