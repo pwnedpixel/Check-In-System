@@ -1096,8 +1096,8 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private void joinButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinButtonActionPerformed
         String firstName = joinFirstNameField.getText();
         String lastName = joinLastNameField.getText();
-        String bDay = joinAddressField.getText();
-        String address = joinDOBfield.getText();
+        String bDay = joinDOBfield.getText();
+        String address = joinAddressField.getText();
         personDB.addPerson(firstName, lastName, bDay, address);
         invisAll();
         startPanel.setVisible(true);
