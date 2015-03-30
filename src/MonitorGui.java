@@ -1,6 +1,8 @@
 
 import java.util.LinkedList;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -44,8 +46,6 @@ public class MonitorGui extends javax.swing.JFrame
         DOBfield = new javax.swing.JTextField();
         RemoveUser = new javax.swing.JButton();
         DOB = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listArea = new javax.swing.JTextArea();
         addressField = new javax.swing.JTextField();
         Address = new javax.swing.JLabel();
         listPeopleButton = new javax.swing.JButton();
@@ -63,6 +63,8 @@ public class MonitorGui extends javax.swing.JFrame
         DEL1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         warningLabel = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listArea = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -113,11 +115,6 @@ public class MonitorGui extends javax.swing.JFrame
         });
 
         DOB.setText("Date of birth");
-
-        listArea.setEditable(false);
-        listArea.setColumns(20);
-        listArea.setRows(5);
-        jScrollPane1.setViewportView(listArea);
 
         addressField.addActionListener(new java.awt.event.ActionListener()
         {
@@ -237,9 +234,21 @@ public class MonitorGui extends javax.swing.JFrame
                         .addComponent(idToResetField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(resetWarningIdButton))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        listArea.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][]
+            {
+
+            },
+            new String []
+            {
+                "ID", "First Name", "Last Name", "DOB", "Address"
+            }
+        ));
+        jScrollPane3.setViewportView(listArea);
 
         javax.swing.GroupLayout adminPanelLayout = new javax.swing.GroupLayout(adminPanel);
         adminPanel.setLayout(adminPanelLayout);
@@ -261,8 +270,8 @@ public class MonitorGui extends javax.swing.JFrame
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminPanelLayout.createSequentialGroup()
                         .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(firstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -304,7 +313,7 @@ public class MonitorGui extends javax.swing.JFrame
                     .addComponent(searchButton)
                     .addComponent(clearButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(adminPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(adminPanelLayout.createSequentialGroup()
                         .addComponent(AddUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -313,9 +322,9 @@ public class MonitorGui extends javax.swing.JFrame
                             .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(listPeopleButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -329,10 +338,10 @@ public class MonitorGui extends javax.swing.JFrame
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(adminPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(adminPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -384,16 +393,21 @@ public class MonitorGui extends javax.swing.JFrame
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_searchButtonActionPerformed
     {//GEN-HEADEREND:event_searchButtonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) listArea.getModel();
+        Person tempPerson;
         String firstName = firstNameField.getText();
         String lastName = lastNameField.getText();
         String bDay = DOBfield.getText();
         String address = addressField.getText();
         LinkedList results = personDB.searchDB(firstName, lastName, bDay, address);
-        listArea.setText("");
+        int rows = model.getRowCount();
+        for (int i = rows - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
         String current;
         for (int x = 0; x < results.size(); x++) {
-            current = listArea.getText();
-            listArea.setText(current + results.get(x) + "\n");
+            tempPerson = (Person) results.get(x);
+            model.addRow(new Object[]{tempPerson.getFirstName(), tempPerson.getLastName(), tempPerson.getDOB(), tempPerson.getAddress()});
         }
     }//GEN-LAST:event_searchButtonActionPerformed
 
@@ -417,8 +431,8 @@ public class MonitorGui extends javax.swing.JFrame
     }//GEN-LAST:event_resetWarningIdButtonActionPerformed
 
     /**
-     * 
-     * @param stations 
+     *
+     * @param stations
      */
     public void setStationList(LinkedList stations)
     {
@@ -432,18 +446,23 @@ public class MonitorGui extends javax.swing.JFrame
     }
 
     /**
-     * 
-     * @param listToRefresh 
+     *
+     * @param listToRefresh
      */
-    private void refreshList(JTextArea listToRefresh)
+    private void refreshList(JTable tableToRefresh)
     {
-        listToRefresh.setText("");
-        LinkedList list = personDB.getList("FirstName","ASC", true);
+        DefaultTableModel model = (DefaultTableModel) tableToRefresh.getModel();
+        int rows = model.getRowCount();
+        for (int i = rows - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        Person tempPerson;
+        LinkedList list = personDB.getList();
         String current;
         //int x = 0;
-        for (int x = 0;x<list.size();x++) {
-            current = listToRefresh.getText();
-            listToRefresh.setText(current + list.get(x) + "\n");
+        for (int x = 0; x < list.size(); x++) {
+            tempPerson = (Person) list.get(x);
+            model.addRow(new Object[]{tempPerson.getFirstName(), tempPerson.getLastName(), tempPerson.getDOB(), tempPerson.getAddress()});
         }
     }
 
@@ -504,11 +523,11 @@ public class MonitorGui extends javax.swing.JFrame
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField lastNameField;
-    private javax.swing.JTextArea listArea;
+    private javax.swing.JTable listArea;
     private javax.swing.JButton listPeopleButton;
     private javax.swing.JButton resetWarningIdButton;
     private javax.swing.JButton searchButton;

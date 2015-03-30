@@ -246,18 +246,12 @@ public class DbInterface
             rs = stmt.executeQuery(query);
             int x = 0;
             while (rs.next()) {
-                if (includeID) {
-                    IDnumber = rs.getString("ID");
-                }
+                IDnumber = rs.getString("ID");
                 String address = rs.getString("Address");
                 String FirstName = rs.getString("FirstName");
                 String LastName = rs.getString("LastName");
                 String bDay = rs.getString("DOB");
-                if (includeID) {
-                    listOfPeople.add(x, (IDnumber + " " + FirstName + " " + LastName + " " + bDay + " " + address));
-                } else {
-                    listOfPeople.add(x, (FirstName + " " + LastName + " " + bDay + " " + address));
-                }
+                listOfPeople.add(new Person(FirstName,LastName,IDnumber, bDay, address));
                 x++;
             }
         } catch (SQLException e) {
@@ -371,7 +365,7 @@ public class DbInterface
                 String FirstName = rs.getString("FirstName");
                 String LastName = rs.getString("LastName");
                 String newBDay = rs.getString("DOB");
-                searchResults.add(IDnumber + " " + FirstName + " " + LastName + " " + newBDay + " " + newAddress);
+                searchResults.add(new Person(FirstName,LastName, IDnumber, newBDay, newAddress));
             }
         } catch (SQLException e) {
             System.err.println(e);
