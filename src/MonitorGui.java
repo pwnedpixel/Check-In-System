@@ -462,7 +462,7 @@ public class MonitorGui extends javax.swing.JFrame
         //int x = 0;
         for (int x = 0; x < list.size(); x++) {
             tempPerson = (Person) list.get(x);
-            model.addRow(new Object[]{tempPerson.getFirstName(), tempPerson.getLastName(), tempPerson.getDOB(), tempPerson.getAddress()});
+            model.addRow(new Object[]{tempPerson.getID(), tempPerson.getFirstName(), tempPerson.getLastName(), tempPerson.getDOB(), tempPerson.getAddress()});
         }
     }
 
