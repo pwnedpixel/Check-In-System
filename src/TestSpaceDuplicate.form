@@ -284,7 +284,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="joinButton" min="-2" pref="549" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -316,7 +316,7 @@
                       <Component id="joinAddressField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="joinButton" min="-2" pref="266" max="-2" attributes="0"/>
-                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                      <EmptySpace pref="64" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -467,79 +467,88 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" pref="558" max="32767" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                      <Component id="searchAreaButton" min="-2" pref="98" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                                      <Component id="SearchClearButton" min="-2" pref="95" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                      <Component id="searchRefresh" min="-2" pref="95" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="searchFirstNameField" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                                          <Component id="FirstNameText1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="searchLastNameField" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                                          <Component id="LastNameText1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="searchDOBfield" alignment="0" min="-2" pref="98" max="-2" attributes="0"/>
-                                          <Component id="DOB1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Address1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="searchAddressField" min="-2" pref="98" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
                                       <Component id="searchStartMenuButton" min="-2" pref="159" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="FirstNameText1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LastNameText1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="searchFirstNameField" pref="186" max="32767" attributes="0"/>
+                                          <Component id="searchLastNameField" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="SearchClearButton" min="-2" pref="95" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="searchRefresh" min="-2" pref="95" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="searchAddressField" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="DOB1" max="32767" attributes="0"/>
+                                                  <Component id="Address1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="searchDOBfield" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="searchAreaButton" min="-2" pref="98" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="FirstNameText1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DOB1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="searchFirstNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="searchDOBfield" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LastNameText1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="Address1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="FirstNameText1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="DOB1" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="searchDOBfield" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="searchLastNameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="searchFirstNameField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="searchAddressField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="searchAreaButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="SearchClearButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="searchRefresh" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="searchAreaButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="SearchClearButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="searchRefresh" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane3" pref="431" max="32767" attributes="0"/>
+                      <Component id="jScrollPane3" pref="393" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="searchStartMenuButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -549,32 +558,58 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="searchLastNameField">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="15" style="0"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchLastNameFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="searchFirstNameField">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="15" style="0"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchFirstNameFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="searchDOBfield">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="15" style="0"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchDOBfieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="DOB1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="20" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Date of birth"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="searchAddressField">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="15" style="0"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchAddressFieldActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="Address1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="20" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Address"/>
               </Properties>
             </Component>
@@ -604,6 +639,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="FirstNameText1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="20" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="First Name"/>
               </Properties>
             </Component>
@@ -621,6 +659,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="LastNameText1">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="20" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Last Name"/>
               </Properties>
             </Component>

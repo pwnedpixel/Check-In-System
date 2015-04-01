@@ -303,7 +303,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             .addGroup(joinPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(joinButton, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 33, Short.MAX_VALUE))
+                .addGap(0, 19, Short.MAX_VALUE))
         );
         joinPanelLayout.setVerticalGroup(
             joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,7 +330,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                 .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(joinButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         searchPanel.setBackground(new java.awt.Color(255, 210, 161));
@@ -338,6 +338,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
         searchPanel.setForeground(new java.awt.Color(206, 229, 240));
         searchPanel.setPreferredSize(new java.awt.Dimension(580, 660));
 
+        searchLastNameField.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         searchLastNameField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -346,6 +347,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
+        searchFirstNameField.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         searchFirstNameField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -354,6 +356,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
+        searchDOBfield.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         searchDOBfield.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -362,8 +365,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
+        DOB1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         DOB1.setText("Date of birth");
 
+        searchAddressField.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         searchAddressField.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -372,6 +377,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
+        Address1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         Address1.setText("Address");
 
         searchRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SmallCopyButtonGreen.png"))); // NOI18N
@@ -396,6 +402,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
+        FirstNameText1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         FirstNameText1.setText("First Name");
 
         SearchClearButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/SmallCopyButtonGreen.png"))); // NOI18N
@@ -409,6 +416,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             }
         });
 
+        LastNameText1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         LastNameText1.setText("Last Name");
 
         searchStartMenuButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Graphics/LongGreen.png"))); // NOI18N
@@ -453,62 +461,67 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             .addGroup(searchPanelLayout.createSequentialGroup()
                 .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(searchPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE))
+                    .addGroup(searchPanelLayout.createSequentialGroup()
                         .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(searchPanelLayout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(searchAreaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(89, 89, 89)
-                                .addComponent(SearchClearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(93, 93, 93)
-                                .addComponent(searchRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(searchPanelLayout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(searchFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(FirstNameText1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(searchLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(LastNameText1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(searchDOBfield, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DOB1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Address1)
-                                    .addComponent(searchAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(searchPanelLayout.createSequentialGroup()
                                 .addGap(210, 210, 210)
-                                .addComponent(searchStartMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 40, Short.MAX_VALUE))
-                    .addGroup(searchPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3)))
+                                .addComponent(searchStartMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(searchPanelLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(FirstNameText1)
+                                    .addComponent(LastNameText1)
+                                    .addComponent(searchFirstNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                                    .addComponent(searchLastNameField))
+                                .addGap(44, 44, 44)
+                                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(searchPanelLayout.createSequentialGroup()
+                                        .addComponent(SearchClearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(searchRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(searchAddressField)
+                                    .addGroup(searchPanelLayout.createSequentialGroup()
+                                        .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(DOB1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(Address1)
+                                            .addComponent(searchDOBfield))
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(53, 53, 53)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPanelLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(searchAreaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPanelLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
+                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FirstNameText1)
+                    .addComponent(DOB1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchDOBfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LastNameText1)
-                    .addComponent(Address1)
-                    .addComponent(FirstNameText1)
-                    .addComponent(DOB1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Address1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchDOBfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(searchFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchAreaButton)
-                    .addComponent(SearchClearButton)
-                    .addComponent(searchRefresh))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
+                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(searchAreaButton)
+                    .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(SearchClearButton)
+                        .addComponent(searchRefresh)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchStartMenuButton)
                 .addContainerGap())
