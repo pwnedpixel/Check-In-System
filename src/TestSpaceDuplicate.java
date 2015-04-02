@@ -28,10 +28,10 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
     private String[] addressLang = {"Address", "Addresse", "Direcciòn"};
     private String[] searchLang = {"Search", "recherche", "Búsqueda"};
     private String[] helpLang = {"Request Help", "Aide Requis", "Ayuda"};
-    private String[] joinLang = {"Join", "Joindre", "Joindre"};
+    private String[] joinLang = {"Join", "Ajoutez", "Joindre"};
     private String[] clearLang = {"Clear", "Remettre", "Reajustar"};
     private String[] refreshLang = {"Refresh", "rafraîchir", "Refrescar"};
-    private String[] startMenuLang = {"Main Menu", "menu principal", "menú principal"};
+    private String[] startMenuLang = {"Main Menu", "menu", "menú"};
 
     /**
      * Creates new form NewJFrame
@@ -285,14 +285,14 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                                 .addComponent(DOB2, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(joinLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(FirstNameText2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(joinPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel1)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, joinPanelLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(startMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(startMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30))))
                     .addGroup(joinPanelLayout.createSequentialGroup()
                         .addGroup(joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,7 +303,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
             .addGroup(joinPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(joinButton, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 33, Short.MAX_VALUE))
         );
         joinPanelLayout.setVerticalGroup(
             joinPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,7 +330,7 @@ public class TestSpaceDuplicate extends javax.swing.JFrame
                 .addComponent(joinAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(joinButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         searchPanel.setBackground(new java.awt.Color(255, 210, 161));
