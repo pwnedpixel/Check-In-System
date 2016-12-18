@@ -6,13 +6,9 @@ import java.util.LinkedList;
 public class DbInterface
 {
 
-    String dbUrl = "jdbc:mysql://group9p3.cloudapp.net:3306/personsdatabase";
-    //theslave
-    //String dbUrl = "jdbc:mysql://localhost:3306/personsdatabase";
-    //String user = "";
-    //String pass = "";
-    String user = "Andy";
-    String pass = "4ibss6al";
+    String dbUrl = "";
+    String user = "test";
+    String pass = "test";
     Connection conn = null;
     Statement stmt = null;
     CallableStatement cstmt = null;
